@@ -1,4 +1,4 @@
-# Guess What?!
+# Guess What?! ReadME
 
 Guess What?! is a guessing game for developing problem solving skills though the process of elimination.
 
