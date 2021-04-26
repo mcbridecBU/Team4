@@ -5,9 +5,13 @@ Guess What?! is a guessing game for developing problem solving skills though the
 To compile the game itself, the attatched makefile is required. It makes sure to include all the necessary sfml modules (graphics, system, and window).
 1) Ensure that makefile is in the same directory as the game.cpp file.
 2) Navigate to the directory using a terminal window.
-3) Type "make game" to compile the program. This will make an executable titled "game".
-4) To launch the executable, type "game" into the terminal.
+3) Type "make game" to compile the program. This will make an executable titled "GuessWhat".
 
+To launch the executable:
+1) Ensure that the executable "GuessWhat" and txt file "highscore.txt" are in your current directory.
+2) Enter "GuessWhat" into the terminal.
+
+Gameplay
 When the game launches, four categories will be displayed, each labeled "A Animals", "B Countries", "C Food", and "D Sports".
 To select a category, press the corresponding key on your keyboard.
 
