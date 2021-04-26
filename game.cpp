@@ -29,12 +29,23 @@ int main() {
 
   // Rectangles for the 5 categories
   int buttonwidth = 600;
-  int buttonheight = 50;
+  int buttonheight = 100;
+  int guessbox_dimension = 150;
   sf::RectangleShape cat_1_box(sf::Vector2f(buttonwidth, buttonheight));
   sf::RectangleShape cat_2_box(sf::Vector2f(buttonwidth, buttonheight));
   sf::RectangleShape cat_3_box(sf::Vector2f(buttonwidth, buttonheight));
   sf::RectangleShape cat_4_box(sf::Vector2f(buttonwidth, buttonheight));
-  sf::RectangleShape cat_5_box(sf::Vector2f(buttonwidth, buttonheight));
+  sf::RectangleShape guess_box_1(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_2(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_3(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_4(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_5(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_6(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_7(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_8(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape guess_box_9(sf::Vector2f(guessbox_dimension, guessbox_dimension));
+  sf::RectangleShape hint_box(sf::Vector2f(buttonwidth, buttonheight));
+
 
   // Creates the different text elements for the main screen
   // Default colors: Red, Green, Blue, Yellow, Cyan, Magenta, Black, White
@@ -46,21 +57,49 @@ int main() {
   sf::Text cat_three_text;
   sf::Text cat_four_text;
   sf::Text cat_five_text;
-  cat_1_box.setFillColor(sf::Color(150, 0, 255));
+  sf::Text score;
+  cat_1_box.setFillColor(sf::Color(200, 30, 100));
   cat_1_box.setOutlineThickness(1);
   cat_1_box.setOutlineColor(sf::Color::White);
-  cat_2_box.setFillColor(sf::Color::Cyan);
+  cat_2_box.setFillColor(sf::Color(200, 30, 100));
   cat_2_box.setOutlineThickness(1);
   cat_2_box.setOutlineColor(sf::Color::White);
-  cat_3_box.setFillColor(sf::Color::Green);
+  cat_3_box.setFillColor(sf::Color(200, 30, 100));
   cat_3_box.setOutlineThickness(1);
   cat_3_box.setOutlineColor(sf::Color::White);
-  cat_4_box.setFillColor(sf::Color::Yellow);
+  cat_4_box.setFillColor(sf::Color(200, 30, 100));
   cat_4_box.setOutlineThickness(1);
   cat_4_box.setOutlineColor(sf::Color::White);
-  cat_5_box.setFillColor(sf::Color::Blue);
-  cat_5_box.setOutlineThickness(1);
-  cat_5_box.setOutlineColor(sf::Color::White);
+  hint_box.setFillColor(sf::Color(128,128,128));
+  hint_box.setOutlineThickness(1);
+  hint_box.setOutlineColor(sf::Color::White);
+  guess_box_1.setFillColor(sf::Color::Blue);
+  guess_box_1.setOutlineThickness(1);
+  guess_box_1.setOutlineColor(sf::Color::White);
+  guess_box_2.setFillColor(sf::Color::Blue);
+  guess_box_2.setOutlineThickness(1);
+  guess_box_2.setOutlineColor(sf::Color::White);
+  guess_box_3.setFillColor(sf::Color::Blue);
+  guess_box_3.setOutlineThickness(1);
+  guess_box_3.setOutlineColor(sf::Color::White);
+  guess_box_4.setFillColor(sf::Color::Blue);
+  guess_box_4.setOutlineThickness(1);
+  guess_box_4.setOutlineColor(sf::Color::White);
+  guess_box_5.setFillColor(sf::Color::Blue);
+  guess_box_5.setOutlineThickness(1);
+  guess_box_5.setOutlineColor(sf::Color::White);  
+  guess_box_6.setFillColor(sf::Color::Blue);
+  guess_box_6.setOutlineThickness(1);
+  guess_box_6.setOutlineColor(sf::Color::White);
+  guess_box_7.setFillColor(sf::Color::Blue);
+  guess_box_7.setOutlineThickness(1);
+  guess_box_7.setOutlineColor(sf::Color::White);
+  guess_box_8.setFillColor(sf::Color::Blue);
+  guess_box_8.setOutlineThickness(1);
+  guess_box_8.setOutlineColor(sf::Color::White);
+  guess_box_9.setFillColor(sf::Color::Blue);
+  guess_box_9.setOutlineThickness(1);
+  guess_box_9.setOutlineColor(sf::Color::White);    
 
   // Creates the fonts used for each of the text blocks (can be anything in the VM,
   // just browse and choose what you like)
@@ -69,11 +108,11 @@ int main() {
   topfont.loadFromFile("/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf");
   categoryfont.loadFromFile("/usr/share/fonts/truetype/ubuntu/Ubuntu-Th.ttf");
   toptext.setFont(topfont);
-  cat_one_text.setFont(categoryfont);
-  cat_two_text.setFont(categoryfont);
-  cat_three_text.setFont(categoryfont);
-  cat_four_text.setFont(categoryfont);
-  cat_five_text.setFont(categoryfont);
+  cat_one_text.setFont(topfont);
+  cat_two_text.setFont(topfont);
+  cat_three_text.setFont(topfont);
+  cat_four_text.setFont(topfont);
+  //cat_five_text.setFont(categoryfont);
 
   // Not sure if this is needed or not...
   window.setFramerateLimit(10);
@@ -81,36 +120,51 @@ int main() {
   // Set position of elements (x position, y position).
   // (indexed off the top left conrer)
   box.setPosition(50, 50);
-  cat_1_box.setPosition(200, 100);
-  cat_2_box.setPosition(200, 200);
-  cat_3_box.setPosition(200, 300);
-  cat_4_box.setPosition(200, 400);
-  cat_5_box.setPosition(200, 500);
-  toptext.setPosition(275, 0);
-  cat_one_text.setPosition(420, 100);
-  cat_two_text.setPosition(420, 200);
-  cat_three_text.setPosition(420, 300);
-  cat_four_text.setPosition(420, 400);
-  cat_five_text.setPosition(420, 500);
+  cat_1_box.setPosition(200, 150);
+  cat_2_box.setPosition(200, 300);
+  cat_3_box.setPosition(200, 450);
+  cat_4_box.setPosition(200, 600);
+  hint_box.setPosition(200, 25);
+  guess_box_1.setPosition(225, 150);
+  guess_box_2.setPosition(425, 150);
+  guess_box_3.setPosition(625, 150);
+  guess_box_4.setPosition(225, 350);
+  guess_box_5.setPosition(425, 350);
+  guess_box_6.setPosition(625, 350);
+  guess_box_7.setPosition(225, 550);
+  guess_box_8.setPosition(425, 550);
+  guess_box_9.setPosition(625, 550);
+
+  toptext.setPosition(100, 50);
+  cat_one_text.setPosition(225, 170);
+  cat_two_text.setPosition(225, 320);
+  cat_three_text.setPosition(225, 470);
+  cat_four_text.setPosition(225, 620);
+  //cat_five_text.setPosition(420, 500);
 
   // Assign the text that will be displayed for each element.
   toptext.setString("Let's Play! Select A Category...");
+  toptext.setCharacterSize(50);
   toptext.setFillColor(sf::Color::White);
-  cat_one_text.setString("Category 1");
+  cat_one_text.setString("1)      Animals");
+  cat_one_text.setCharacterSize(50);
   cat_one_text.setFillColor(sf::Color::Black);
   cat_one_text.setOutlineThickness(0);
-  cat_two_text.setString("Category 1");
+  cat_two_text.setString("2)     Countries");
+  cat_two_text.setCharacterSize(50);
   cat_two_text.setFillColor(sf::Color::Black);
   cat_two_text.setOutlineThickness(0);
-  cat_three_text.setString("Category 3");
+  cat_three_text.setString("3)       Food");
+  cat_three_text.setCharacterSize(50);
   cat_three_text.setFillColor(sf::Color::Black);
   cat_three_text.setOutlineThickness(0);
-  cat_four_text.setString("Category 4");
+  cat_four_text.setString("4)      Sports");
+  cat_four_text.setCharacterSize(50);
   cat_four_text.setFillColor(sf::Color::Black);
   cat_four_text.setOutlineThickness(0);
-  cat_five_text.setString("Category 5");
-  cat_five_text.setFillColor(sf::Color::Black);
-  cat_five_text.setOutlineThickness(0);
+  // cat_five_text.setString("Category 5");
+  // cat_five_text.setFillColor(sf::Color::Black);
+  // cat_five_text.setOutlineThickness(0);
 
   // Opens the GUI and keeps it open until it is closed
   while (window.isOpen()) {
@@ -125,7 +179,7 @@ int main() {
     //   background it needs to be printed first/early. If you want something
     //     to be in the foregroud, it needs to be printed last/later.
     window.clear();
-    window.draw(box);
+    //window.draw(box);
     window.draw(toptext);
     window.draw(cat_1_box);
     window.draw(cat_2_box);
@@ -149,8 +203,17 @@ int main() {
             window.close();
         }
         window.clear();
-        window.draw(box);
-        window.draw(cat_5_box);
+        //window.draw(box);
+        window.draw(hint_box);
+        window.draw(guess_box_1);
+        window.draw(guess_box_2);
+        window.draw(guess_box_3);
+        window.draw(guess_box_4);
+        window.draw(guess_box_5);
+        window.draw(guess_box_6);
+        window.draw(guess_box_7);
+        window.draw(guess_box_8);
+        window.draw(guess_box_9);
         window.draw(cat_five_text);
         window.display();
       }
