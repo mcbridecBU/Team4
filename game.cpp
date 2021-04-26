@@ -1,7 +1,7 @@
-# Copyright 2021 F. Alshammari fahed@bu.edu
-# Copyright 2021 S. Deckers sebd@bu.edu
-# Copyright 2021 C. McBride mcbridec@bu.edu
-# Copyright 2021 J. Wang jaswang@bu.edu
+//#Copyright 2021 F. Alshammari fahed@bu.edu
+//#Copyright 2021 S. Deckers sebd@bu.edu
+//#Copyright 2021 C. McBride mcbridec@bu.edu
+//#Copyright 2021 J. Wang jaswang@bu.edu
 
 #include<iostream>
 #include<fstream>
@@ -21,6 +21,7 @@ using std::cout;
 using std::string;
 using std::to_string;
 
+// creating categories loaded with words and hints
 typedef std::vector<std::string> category;
 std::vector <category> animals{
   {"Gorilla", "Has Fur", "Large", "Bipedal"},
@@ -66,7 +67,17 @@ std::vector <category> sports{
   {"Cricket", "Bat", "Wicket", "England"},
   {"Volleyball", "Net", "Beach", "Jump"}
 };
-
+std::vector <category> languages{
+  {"C", "Low-level", "Stable:2018", "Lacking built-in function"},
+  {"C++", ".at() not []", "Stable:2020", "Great class at BU"},
+  {"Python", "Many Libraries", "High-level", "Slower speed"},
+  {"Matlab", "Excellent Visualization", "Data Analysis", "Used by most engineers"},
+  {"Java", "Easy", "Widely-used", "Server-side language"},
+  {"Javascript", "Build websites", "Makes User-interfaces", "Recently turned 25"},
+  {"R", "Data-analsis", "Open-source", "Machine-learning equations"},
+  {"Reactnative", "Mobile apps", "Made by Facebook", "Younger Language"},
+  {"Assembly", "Lowest-level", "Hard to debug", "direct hardware manipulation"}
+};
 
 int main() {
   int round_counter = 0; //counter for max rounds.
@@ -78,221 +89,225 @@ int main() {
 
   // This block of items creates the elements used for the main page
 
-  // Background Box
+    // Background Box
   sf::RectangleShape box(sf::Vector2f(windowwidth-2, windowheight-2));
   box.setFillColor(sf::Color(210,210,210));
   box.setOutlineColor(sf::Color(125,125,125));
   box.setOutlineThickness(1);
+  box.setPosition(1, 1);
 
-  // Rectangles for the 5 categories
-  int buttonwidth = 600;
-  int buttonheight = 100;
-  int guessbox_width = 300;
-  int guessbox_height = 50;
-  sf::RectangleShape cat_1_box(sf::Vector2f(buttonwidth, buttonheight));
-  sf::RectangleShape cat_2_box(sf::Vector2f(buttonwidth, buttonheight));
-  sf::RectangleShape cat_3_box(sf::Vector2f(buttonwidth, buttonheight));
-  sf::RectangleShape cat_4_box(sf::Vector2f(buttonwidth, buttonheight));
-  sf::RectangleShape guess_box_1(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_2(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_3(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_4(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_5(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_6(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_7(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_8(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape guess_box_9(sf::Vector2f(guessbox_width, guessbox_height));
-  sf::RectangleShape hint_box(sf::Vector2f(buttonwidth, 75));
-
-
-  // Creates the different text elements for the main screen
-  // Default colors: Red, Green, Blue, Yellow, Cyan, Magenta, Black, White
-  // Custom colors can be made by specifying the R,G,B value (see line 45)
-  //   (cusstom values range from 0-255)
-  sf::Text toptext;
-  sf::Text cat_one_text;
-  sf::Text cat_two_text;
-  sf::Text cat_three_text;
-  sf::Text cat_four_text;
-  sf::Text cat_five_text;
-  sf::Text score_text;
-  sf::Text score_num;
-  sf::Text highscore_text;
-  sf::Text highscore_num;
-  sf::Text guess_text_1;
-  sf::Text guess_text_2;
-  sf::Text guess_text_3;
-  sf::Text guess_text_4;
-  sf::Text guess_text_5;
-  sf::Text guess_text_6;
-  sf::Text guess_text_7;
-  sf::Text guess_text_8;
-  sf::Text guess_text_9;
-  sf::Text hint_text;
+    // Rectangles for the 5 categories
+    // Custom colors created by combining (R,G,B) values
+  int cat_box_width = 600;
+  int cat_box_height = 100;
+  sf::RectangleShape cat_1_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_1_box.setFillColor(sf::Color::White);
   cat_1_box.setOutlineThickness(3);
   cat_1_box.setOutlineColor(sf::Color(185,185,185));
+  cat_1_box.setPosition(200, 150);
+  sf::RectangleShape cat_2_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_2_box.setFillColor(sf::Color::White);
   cat_2_box.setOutlineThickness(3);
   cat_2_box.setOutlineColor(sf::Color(185,185,185));
+  cat_2_box.setPosition(200, 300);
+  sf::RectangleShape cat_3_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_3_box.setFillColor(sf::Color::White);
   cat_3_box.setOutlineThickness(3);
   cat_3_box.setOutlineColor(sf::Color(185,185,185));
+  cat_3_box.setPosition(200, 450);
+  sf::RectangleShape cat_4_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_4_box.setFillColor(sf::Color::White);
   cat_4_box.setOutlineThickness(3);
   cat_4_box.setOutlineColor(sf::Color(185,185,185));
+  cat_4_box.setPosition(200, 600);
+
+    // Rectangles for the 9 guesses in each category
+  int guessbox_width = 300;
+  int guessbox_height = 50;
+  sf::RectangleShape hint_box(sf::Vector2f(cat_box_width, 75));
   hint_box.setFillColor(sf::Color(0, 0, 128));
   hint_box.setOutlineThickness(1);
   hint_box.setOutlineColor(sf::Color::White);
+  hint_box.setPosition(200, 50);
+  sf::RectangleShape guess_box_1(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_1.setFillColor(sf::Color::White);
   guess_box_1.setOutlineThickness(3);
   guess_box_1.setOutlineColor(sf::Color(185,185,185));
+  guess_box_1.setPosition(150, 175);
+  sf::RectangleShape guess_box_2(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_2.setFillColor(sf::Color::White);
   guess_box_2.setOutlineThickness(3);
   guess_box_2.setOutlineColor(sf::Color(185,185,185));
+  guess_box_2.setPosition(550, 175);
+  sf::RectangleShape guess_box_3(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_3.setFillColor(sf::Color::White);
   guess_box_3.setOutlineThickness(3);
   guess_box_3.setOutlineColor(sf::Color(185,185,185));
+  guess_box_3.setPosition(150, 300);
+  sf::RectangleShape guess_box_4(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_4.setFillColor(sf::Color::White);
   guess_box_4.setOutlineThickness(3);
   guess_box_4.setOutlineColor(sf::Color(185,185,185));
+  guess_box_4.setPosition(550, 300);
+  sf::RectangleShape guess_box_5(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_5.setFillColor(sf::Color::White);
   guess_box_5.setOutlineThickness(3);
   guess_box_5.setOutlineColor(sf::Color(185,185,185));
+  guess_box_5.setPosition(150, 425);
+  sf::RectangleShape guess_box_6(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_6.setFillColor(sf::Color::White);
   guess_box_6.setOutlineThickness(3);
   guess_box_6.setOutlineColor(sf::Color(185,185,185));
+  guess_box_6.setPosition(550, 425);
+  sf::RectangleShape guess_box_7(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_7.setFillColor(sf::Color::White);
   guess_box_7.setOutlineThickness(3);
   guess_box_7.setOutlineColor(sf::Color(185,185,185));
+  guess_box_7.setPosition(150, 550);
+  sf::RectangleShape guess_box_8(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_8.setFillColor(sf::Color::White);
   guess_box_8.setOutlineThickness(3);
   guess_box_8.setOutlineColor(sf::Color(185,185,185));
+  guess_box_8.setPosition(550, 550);
+  sf::RectangleShape guess_box_9(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_9.setFillColor(sf::Color::White);
   guess_box_9.setOutlineThickness(3);
   guess_box_9.setOutlineColor(sf::Color(185,185,185));
+  guess_box_9.setPosition(350, 675);
 
-  // Creates the fonts used for each of the text blocks (can be anything in the VM,
-  // just browse and choose what you like)
+  // Creates the different text elements for the main screen
+    // Creates the fonts used for each of the text blocks (can be anything in the VM,
+    // just browse and choose what you like)
   sf::Font topfont;
   sf::Font categoryfont;
   topfont.loadFromFile("/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf");
   categoryfont.loadFromFile("/usr/share/fonts/truetype/ubuntu/Ubuntu-Th.ttf");
-  toptext.setFont(topfont);
-  cat_one_text.setFont(topfont);
-  cat_two_text.setFont(topfont);
-  cat_three_text.setFont(topfont);
-  cat_four_text.setFont(topfont);
-  guess_text_1.setFont(topfont);
-  guess_text_2.setFont(topfont);
-  guess_text_3.setFont(topfont);
-  guess_text_4.setFont(topfont);
-  guess_text_5.setFont(topfont);
-  guess_text_6.setFont(topfont);
-  guess_text_7.setFont(topfont);
-  guess_text_8.setFont(topfont);
-  guess_text_9.setFont(topfont);
-  hint_text.setFont(categoryfont);
+    // Custom colors created by combining (R,G,B) values
 
-  // creating the text for player score
+    // Text for the top banner on the main screen
+  sf::Text toptext;
+  toptext.setFont(topfont);
+  toptext.setPosition(100, 50);
+  toptext.setString("Let's Play! Select A Category...");
+  toptext.setCharacterSize(50);
+  toptext.setFillColor(sf::Color(0,0,128));
+    // Text for each of the four categories
+  sf::Text cat_one_text;
+  cat_one_text.setFont(topfont);
+  cat_one_text.setPosition(225, 170);
+  cat_one_text.setString("A)      Animals");
+  cat_one_text.setCharacterSize(50);
+  cat_one_text.setFillColor(sf::Color(0,0,128));
+  cat_one_text.setOutlineThickness(0);
+  sf::Text cat_two_text;
+  cat_two_text.setFont(topfont);
+  cat_two_text.setPosition(225, 320);
+  cat_two_text.setString("B)     Countries");
+  cat_two_text.setCharacterSize(50);
+  cat_two_text.setFillColor(sf::Color(0,0,128));
+  cat_two_text.setOutlineThickness(0);
+  sf::Text cat_three_text;
+  cat_three_text.setFont(topfont);
+  cat_three_text.setPosition(225, 470);
+  cat_three_text.setString("C)       Food");
+  cat_three_text.setCharacterSize(50);
+  cat_three_text.setFillColor(sf::Color(0,0,128));
+  cat_three_text.setOutlineThickness(0);
+  sf::Text cat_four_text;
+  cat_four_text.setFont(topfont);
+  cat_four_text.setPosition(225, 620);
+  cat_four_text.setString("D)      Sports");
+  cat_four_text.setCharacterSize(50);
+  cat_four_text.setFillColor(sf::Color(0,0,128));
+  cat_four_text.setOutlineThickness(0);
+  // sf::Text cat_five_text;
+  // cat_five_text.setFont(topfont);
+  // cat_five_text.setPosition(225, 620);
+  // cat_five_text.setString("E) Coding Languages");
+  // cat_five_text.setCharacterSize(50);
+  // cat_five_text.setFillColor(sf::Color(0,0,128));
+  // cat_five_text.setOutlineThickness(0);
+
+    // creating the text for the score
+  sf::Text score_text;
   score_text.setFont(topfont);
   score_text.setPosition(800, 735);
   score_text.setString("Score:");
   score_text.setCharacterSize(35);
   score_text.setFillColor(sf::Color(5,102,8));
   score_text.setOutlineThickness(0);
+  sf::Text score_num;
   score_num.setFont(topfont);
   score_num.setPosition(907, 735);
   score_num.setString("0"); //Replace "num" with points (int to string)
   score_num.setCharacterSize(35);
   score_num.setFillColor(sf::Color(5,102,8));
   score_num.setOutlineThickness(0);
+  
   // creating the text for the running high score
+  sf::Text highscore_text;
   highscore_text.setFont(topfont);
   highscore_text.setPosition(50, 735);
   highscore_text.setString("Highscore:");
   highscore_text.setCharacterSize(35);
   highscore_text.setFillColor(sf::Color(150,0,0));
   highscore_text.setOutlineThickness(0);
+  sf::Text highscore_num;
   highscore_num.setFont(topfont);
   highscore_num.setPosition(237, 735);
   highscore_num.setString("0"); //Replace "num" with points (int to string)
   highscore_num.setCharacterSize(35);
   highscore_num.setFillColor(sf::Color(150,0,0));
   highscore_num.setOutlineThickness(0);
+
+    // creating the text for each of the guesses for each category
+    // note - the strings will be assigned later
+  sf::Text guess_text_1;
+  guess_text_1.setFont(topfont);
+  guess_text_1.setPosition(155, 177);
+  guess_text_1.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_2;
+  guess_text_2.setFont(topfont);
+  guess_text_2.setPosition(555, 177);
+  guess_text_2.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_3;
+  guess_text_3.setFont(topfont);
+  guess_text_3.setPosition(155, 302);
+  guess_text_3.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_4;
+  guess_text_4.setFont(topfont);
+  guess_text_4.setPosition(555, 302);
+  guess_text_4.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_5;
+  guess_text_5.setFont(topfont);
+  guess_text_5.setPosition(155, 427);
+  guess_text_5.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_6;
+  guess_text_6.setFont(topfont);
+  guess_text_6.setPosition(555, 427);
+  guess_text_6.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_7;
+  guess_text_7.setFont(topfont);
+  guess_text_7.setPosition(155, 552);
+  guess_text_7.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_8;
+  guess_text_8.setFont(topfont);
+  guess_text_8.setPosition(555, 552);
+  guess_text_8.setFillColor(sf::Color(0,0,128));
+  sf::Text guess_text_9;
+  guess_text_9.setFont(topfont);
+  guess_text_9.setPosition(355, 677);
+  guess_text_9.setFillColor(sf::Color(0,0,128));
+  sf::Text hint_text;
+  hint_text.setFont(categoryfont);
+  hint_text.setPosition(205, 75);
+  hint_text.setFillColor(sf::Color::White);
+
   // Not sure if this is needed or not...
   window.setFramerateLimit(10);
 
-  // Set position of elements (x position, y position).
-  // (indexed off the top left conrer)
-  box.setPosition(1, 1);
-  cat_1_box.setPosition(200, 150);
-  cat_2_box.setPosition(200, 300);
-  cat_3_box.setPosition(200, 450);
-  cat_4_box.setPosition(200, 600);
-  hint_box.setPosition(200, 50);
-  guess_box_1.setPosition(150, 175);
-  guess_box_2.setPosition(550, 175);
-  guess_box_3.setPosition(150, 300);
-  guess_box_4.setPosition(550, 300);
-  guess_box_5.setPosition(150, 425);
-  guess_box_6.setPosition(550, 425);
-  guess_box_7.setPosition(150, 550);
-  guess_box_8.setPosition(550, 550);
-  guess_box_9.setPosition(350, 675);
-
-  toptext.setPosition(100, 50);
-  cat_one_text.setPosition(225, 170);
-  cat_two_text.setPosition(225, 320);
-  cat_three_text.setPosition(225, 470);
-  cat_four_text.setPosition(225, 620);
-  guess_text_1.setPosition(155, 177);
-  guess_text_2.setPosition(555, 177);
-  guess_text_3.setPosition(155, 302);
-  guess_text_4.setPosition(555, 302);
-  guess_text_5.setPosition(155, 427);
-  guess_text_6.setPosition(555, 427);
-  guess_text_7.setPosition(155, 552);
-  guess_text_8.setPosition(555, 552);
-  guess_text_9.setPosition(355, 677);
-  hint_text.setPosition(205, 75);
-  //cat_five_text.setPosition(420, 500);
-
-  // Assign the text that will be displayed for each element.
-  toptext.setString("Let's Play! Select A Category...");
-  toptext.setCharacterSize(50);
-  toptext.setFillColor(sf::Color(0,0,128));
-  cat_one_text.setString("A)      Animals");
-  cat_one_text.setCharacterSize(50);
-  cat_one_text.setFillColor(sf::Color(0,0,128));
-  cat_one_text.setOutlineThickness(0);
-  cat_two_text.setString("B)     Countries");
-  cat_two_text.setCharacterSize(50);
-  cat_two_text.setFillColor(sf::Color(0,0,128));
-  cat_two_text.setOutlineThickness(0);
-  cat_three_text.setString("C)       Food");
-  cat_three_text.setCharacterSize(50);
-  cat_three_text.setFillColor(sf::Color(0,0,128));
-  cat_three_text.setOutlineThickness(0);
-  cat_four_text.setString("D)      Sports");
-  cat_four_text.setCharacterSize(50);
-  cat_four_text.setFillColor(sf::Color(0,0,128));
-  cat_four_text.setOutlineThickness(0);
-  guess_text_1.setFillColor(sf::Color(0,0,128));
-  guess_text_2.setFillColor(sf::Color(0,0,128));
-  guess_text_3.setFillColor(sf::Color(0,0,128));
-  guess_text_4.setFillColor(sf::Color(0,0,128));
-  guess_text_5.setFillColor(sf::Color(0,0,128));
-  guess_text_6.setFillColor(sf::Color(0,0,128));
-  guess_text_7.setFillColor(sf::Color(0,0,128));
-  guess_text_8.setFillColor(sf::Color(0,0,128));
-  guess_text_9.setFillColor(sf::Color(0,0,128));
-  hint_text.setFillColor(sf::Color::White);
 
   std::string str;
-  // cat_five_text.setString("Category 5");
-  // cat_five_text.setFillColor(sf::Color::Black);
-  // cat_five_text.setOutlineThickness(0);
   int points = 0;
   std::vector<std::string> sol;
   std::vector<std::string> sol2;
@@ -1153,7 +1168,193 @@ int main() {
       }
 
     }
-  }
 
+if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+
+
+      while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+          if (event.type == sf::Event::Closed)
+            window.close();
+        }
+
+        window.clear();
+        window.draw(box);
+        window.draw(highscore_text);
+        window.draw(highscore_num);
+        window.draw(hint_box);
+        window.draw(guess_box_1);
+        window.draw(guess_box_2);
+        window.draw(guess_box_3);
+        window.draw(guess_box_4);
+        window.draw(guess_box_5);
+        window.draw(guess_box_6);
+        window.draw(guess_box_7);
+        window.draw(guess_box_8);
+        window.draw(guess_box_9);
+        guess_text_1.setString("1) C");
+        window.draw(guess_text_1);
+        guess_text_2.setString("2) C++");
+        window.draw(guess_text_2);
+        guess_text_3.setString("3) Python");
+        window.draw(guess_text_3);
+        guess_text_4.setString("4) Matlab");
+        window.draw(guess_text_4);
+        guess_text_5.setString("5) Java");
+        window.draw(guess_text_5);
+        guess_text_6.setString("6) Javascript");
+        window.draw(guess_text_6);
+        guess_text_7.setString("7) R");
+        window.draw(guess_text_7);
+        guess_text_8.setString("8) Reactnative");
+        window.draw(guess_text_8);
+        guess_text_9.setString("9) Assembly");
+        window.draw(guess_text_9);
+        hint_text.setString("Hint:");
+
+        window.display();
+        srand(time(0));
+        int v = rand() % 9;
+        int ans = 0;
+        int temp = 30;
+
+        for(int i = 1; i < 4; i++) {
+          bool ans1 = true;
+          window.draw(hint_box);
+
+          window.draw(score_text);
+          std::string str = std::to_string(points);
+          score_num.setString(str);
+          window.draw(score_num);
+          hint_text.setString("Hint: " + languages.at(v).at(i));
+          window.draw(hint_text);
+          window.display();
+          while (ans1 == true) {
+            std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+
+
+              window.draw(hint_box);
+
+              hint_text.setString("Hint: " + languages.at(v).at(i));
+              window.draw(hint_text);
+              window.display();
+              ans1 = false;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+              ans = 1;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+              ans = 2;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+              ans = 3;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+              ans = 4;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+              ans = 5;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+              ans = 6;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+              ans = 7;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+              ans = 8;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+              ans = 9;
+              break;
+            }
+
+          }
+          while(i == 3) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+              ans = 1;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+              ans = 2;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+              ans = 3;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+              ans = 4;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+              ans = 5;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+              ans = 6;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+              ans = 7;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+              ans = 8;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+              ans = 9;
+              break;
+              break;
+            }
+
+          }
+          temp = temp - 10;
+          if (ans == v + 1) {
+            std::string str = std::to_string(points);
+            score_num.setString(str);
+
+            window.draw(score_num);
+            window.display();
+            break;
+          } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
+
+            temp = 0;
+            break;
+          }
+
+
+        }
+
+        points = points + temp;
+        std::string str = std::to_string(points);
+        score_num.setString(str);
+        round_counter++;
+        window.draw(score_num);
+        window.display();
+        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
+        break;//break;
+      }
+
+    }
 }
-
+}
