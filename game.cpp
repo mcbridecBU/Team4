@@ -143,7 +143,7 @@ int main() {
   score_text.setOutlineThickness(0);
   score_num.setFont(topfont);
   score_num.setPosition(907, 735);
-  score_num.setString("0"); //Replace "num" with points
+  score_num.setString("0"); //Replace "num" with points (int to string)
   score_num.setCharacterSize(35);
   score_num.setFillColor(sf::Color::White);
   score_num.setOutlineThickness(0);
