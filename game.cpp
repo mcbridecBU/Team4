@@ -69,6 +69,7 @@ int main() {
   sf::Text guess_text_7;
   sf::Text guess_text_8;
   sf::Text guess_text_9;
+  sf::Text hint_text;
   cat_1_box.setFillColor(sf::Color(200, 30, 100));
   cat_1_box.setOutlineThickness(1);
   cat_1_box.setOutlineColor(sf::Color::White);
@@ -81,7 +82,7 @@ int main() {
   cat_4_box.setFillColor(sf::Color(200, 30, 100));
   cat_4_box.setOutlineThickness(1);
   cat_4_box.setOutlineColor(sf::Color::White);
-  hint_box.setFillColor(sf::Color(128,128,128));
+  hint_box.setFillColor(sf::Color(128, 128, 128));
   hint_box.setOutlineThickness(1);
   hint_box.setOutlineColor(sf::Color::White);
   guess_box_1.setFillColor(sf::Color::Blue);
@@ -98,7 +99,7 @@ int main() {
   guess_box_4.setOutlineColor(sf::Color::White);
   guess_box_5.setFillColor(sf::Color::Blue);
   guess_box_5.setOutlineThickness(1);
-  guess_box_5.setOutlineColor(sf::Color::White);  
+  guess_box_5.setOutlineColor(sf::Color::White);
   guess_box_6.setFillColor(sf::Color::Blue);
   guess_box_6.setOutlineThickness(1);
   guess_box_6.setOutlineColor(sf::Color::White);
@@ -110,7 +111,7 @@ int main() {
   guess_box_8.setOutlineColor(sf::Color::White);
   guess_box_9.setFillColor(sf::Color::Blue);
   guess_box_9.setOutlineThickness(1);
-  guess_box_9.setOutlineColor(sf::Color::White);    
+  guess_box_9.setOutlineColor(sf::Color::White);
 
   // Creates the fonts used for each of the text blocks (can be anything in the VM,
   // just browse and choose what you like)
@@ -123,6 +124,29 @@ int main() {
   cat_two_text.setFont(topfont);
   cat_three_text.setFont(topfont);
   cat_four_text.setFont(topfont);
+  guess_text_1.setFont(categoryfont);
+  guess_text_2.setFont(categoryfont);
+  guess_text_3.setFont(categoryfont);
+  guess_text_4.setFont(categoryfont);
+  guess_text_5.setFont(categoryfont);
+  guess_text_6.setFont(categoryfont);
+  guess_text_7.setFont(categoryfont);
+  guess_text_8.setFont(categoryfont);
+  guess_text_9.setFont(categoryfont);
+  hint_text.setFont(categoryfont);
+
+  score_text.setFont(topfont);
+  score_text.setPosition(800, 735);
+  score_text.setString("Score:");
+  score_text.setCharacterSize(35);
+  score_text.setFillColor(sf::Color::White);
+  score_text.setOutlineThickness(0);
+  score_num.setFont(topfont);
+  score_num.setPosition(907, 735);
+  score_num.setString("0"); //Replace "num" with points
+  score_num.setCharacterSize(35);
+  score_num.setFillColor(sf::Color::White);
+  score_num.setOutlineThickness(0);
   //cat_five_text.setFont(categoryfont);
 
   // Not sure if this is needed or not...
@@ -151,6 +175,16 @@ int main() {
   cat_two_text.setPosition(225, 320);
   cat_three_text.setPosition(225, 470);
   cat_four_text.setPosition(225, 620);
+  guess_text_1.setPosition(155, 177);
+  guess_text_2.setPosition(555, 177);
+  guess_text_3.setPosition(155, 302);
+  guess_text_4.setPosition(555, 302);
+  guess_text_5.setPosition(155, 427);
+  guess_text_6.setPosition(555, 427);
+  guess_text_7.setPosition(155, 552);
+  guess_text_8.setPosition(555, 552);
+  guess_text_9.setPosition(355, 677);
+  hint_text.setPosition(205, 75);
   //cat_five_text.setPosition(420, 500);
 
   // Assign the text that will be displayed for each element.
@@ -173,6 +207,18 @@ int main() {
   cat_four_text.setCharacterSize(50);
   cat_four_text.setFillColor(sf::Color::Black);
   cat_four_text.setOutlineThickness(0);
+  guess_text_1.setFillColor(sf::Color::White);
+  guess_text_2.setFillColor(sf::Color::White);
+  guess_text_3.setFillColor(sf::Color::White);
+  guess_text_4.setFillColor(sf::Color::White);
+  guess_text_5.setFillColor(sf::Color::White);
+  guess_text_6.setFillColor(sf::Color::White);
+  guess_text_7.setFillColor(sf::Color::White);
+  guess_text_8.setFillColor(sf::Color::White);
+  guess_text_9.setFillColor(sf::Color::White);
+  hint_text.setFillColor(sf::Color::Black);
+
+
   // cat_five_text.setString("Category 5");
   // cat_five_text.setFillColor(sf::Color::Black);
   // cat_five_text.setOutlineThickness(0);
@@ -184,21 +230,7 @@ int main() {
       if (event.type == sf::Event::Closed)
         window.close();
     }
-  //Score Box
-  score_text.setFont(topfont);
-  score_text.setPosition(850,700);
-  score_text.setString("Score");
-  score_text.setCharacterSize(35);
-  score_text.setFillColor(sf::Color::White);
-  score_text.setOutlineThickness(0);
-  score_num.setFont(topfont);
-  score_num.setPosition(885,735);
-  score_num.setString("0"); //Replace "num" with points
-  score_num.setCharacterSize(35);
-  score_num.setFillColor(sf::Color::White);
-  score_num.setOutlineThickness(0);
-    
-    
+
     // Print all the elements that have been created for the main page.
     // Note, these are printed in order. If you want something to be in the
     //   background it needs to be printed first/early. If you want something
@@ -241,7 +273,28 @@ int main() {
         window.draw(guess_box_7);
         window.draw(guess_box_8);
         window.draw(guess_box_9);
-        window.draw(cat_five_text);
+        guess_text_1.setString("1) Guess");
+        window.draw(guess_text_1);
+        guess_text_2.setString("2) Guess");
+        window.draw(guess_text_2);
+        guess_text_3.setString("3) Guess");
+        window.draw(guess_text_3);
+        guess_text_4.setString("4) Guess");
+        window.draw(guess_text_4);
+        guess_text_5.setString("5) Guess");
+        window.draw(guess_text_5);
+        guess_text_6.setString("6) Guess");
+        window.draw(guess_text_6);
+        guess_text_7.setString("7) Guess");
+        window.draw(guess_text_7);
+        guess_text_8.setString("8) Guess");
+        window.draw(guess_text_8);
+        guess_text_9.setString("9) Guess");
+        window.draw(guess_text_9);
+        hint_text.setString("Hint:");
+        window.draw(hint_text);
+        window.draw(score_text);
+        window.draw(score_num);
         window.display();
       }
     }
