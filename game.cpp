@@ -58,7 +58,8 @@ int main() {
   sf::Text cat_three_text;
   sf::Text cat_four_text;
   sf::Text cat_five_text;
-  sf::Text score;
+  sf::Text score_text;
+  sf::Text score_num;
   sf::Text guess_text_1;
   sf::Text guess_text_2;
   sf::Text guess_text_3;
@@ -183,7 +184,21 @@ int main() {
       if (event.type == sf::Event::Closed)
         window.close();
     }
-
+  //Score Box
+  score_text.setFont(topfont);
+  score_text.setPosition(850,700);
+  score_text.setString("Score");
+  score_text.setCharacterSize(35);
+  score_text.setFillColor(sf::Color::White);
+  score_text.setOutlineThickness(0);
+  score_num.setFont(topfont);
+  score_num.setPosition(885,735);
+  score_num.setString("0"); //Replace "num" with points
+  score_num.setCharacterSize(35);
+  score_num.setFillColor(sf::Color::White);
+  score_num.setOutlineThickness(0);
+    
+    
     // Print all the elements that have been created for the main page.
     // Note, these are printed in order. If you want something to be in the
     //   background it needs to be printed first/early. If you want something
@@ -199,6 +214,8 @@ int main() {
     window.draw(cat_two_text);
     window.draw(cat_three_text);
     window.draw(cat_four_text);
+    window.draw(score_text);
+    window.draw(score_num);
 
     // Displays the window created from the actions above
     window.display();
