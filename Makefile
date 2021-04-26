@@ -6,4 +6,4 @@
 all: game
 
 game: game.cpp
-	g++ game.cpp -o game -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+	g++ game.cpp -o GuessWhat -lsfml-graphics -lsfml-window -lsfml-system
