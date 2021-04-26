@@ -298,6 +298,144 @@ int main() {
         window.display();
       }
     }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
+
+
+      while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+          if (event.type == sf::Event::Closed)
+            window.close();
+        }
+        window.clear();
+        //window.draw(box);
+        window.draw(hint_box);
+        window.draw(guess_box_1);
+        window.draw(guess_box_2);
+        window.draw(guess_box_3);
+        window.draw(guess_box_4);
+        window.draw(guess_box_5);
+        window.draw(guess_box_6);
+        window.draw(guess_box_7);
+        window.draw(guess_box_8);
+        window.draw(guess_box_9);
+        guess_text_1.setString("1) Guess");
+        window.draw(guess_text_1);
+        guess_text_2.setString("2) Guess");
+        window.draw(guess_text_2);
+        guess_text_3.setString("3) Guess");
+        window.draw(guess_text_3);
+        guess_text_4.setString("4) Guess");
+        window.draw(guess_text_4);
+        guess_text_5.setString("5) Guess");
+        window.draw(guess_text_5);
+        guess_text_6.setString("6) Guess");
+        window.draw(guess_text_6);
+        guess_text_7.setString("7) Guess");
+        window.draw(guess_text_7);
+        guess_text_8.setString("8) Guess");
+        window.draw(guess_text_8);
+        guess_text_9.setString("9) Guess");
+        window.draw(guess_text_9);
+        hint_text.setString("Hint:");
+        window.draw(hint_text);
+        window.draw(score_text);
+        window.draw(score_num);
+        window.display();
+      }
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+
+
+      while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+          if (event.type == sf::Event::Closed)
+            window.close();
+        }
+        window.clear();
+        //window.draw(box);
+        window.draw(hint_box);
+        window.draw(guess_box_1);
+        window.draw(guess_box_2);
+        window.draw(guess_box_3);
+        window.draw(guess_box_4);
+        window.draw(guess_box_5);
+        window.draw(guess_box_6);
+        window.draw(guess_box_7);
+        window.draw(guess_box_8);
+        window.draw(guess_box_9);
+        guess_text_1.setString("1) Guess");
+        window.draw(guess_text_1);
+        guess_text_2.setString("2) Guess");
+        window.draw(guess_text_2);
+        guess_text_3.setString("3) Guess");
+        window.draw(guess_text_3);
+        guess_text_4.setString("4) Guess");
+        window.draw(guess_text_4);
+        guess_text_5.setString("5) Guess");
+        window.draw(guess_text_5);
+        guess_text_6.setString("6) Guess");
+        window.draw(guess_text_6);
+        guess_text_7.setString("7) Guess");
+        window.draw(guess_text_7);
+        guess_text_8.setString("8) Guess");
+        window.draw(guess_text_8);
+        guess_text_9.setString("9) Guess");
+        window.draw(guess_text_9);
+        hint_text.setString("Hint:");
+        window.draw(hint_text);
+        window.draw(score_text);
+        window.draw(score_num);
+        window.display();
+      }
+    }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+
+
+      while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+          if (event.type == sf::Event::Closed)
+            window.close();
+        }
+        window.clear();
+        //window.draw(box);
+        window.draw(hint_box);
+        window.draw(guess_box_1);
+        window.draw(guess_box_2);
+        window.draw(guess_box_3);
+        window.draw(guess_box_4);
+        window.draw(guess_box_5);
+        window.draw(guess_box_6);
+        window.draw(guess_box_7);
+        window.draw(guess_box_8);
+        window.draw(guess_box_9);
+        guess_text_1.setString("1) Guess");
+        window.draw(guess_text_1);
+        guess_text_2.setString("2) Guess");
+        window.draw(guess_text_2);
+        guess_text_3.setString("3) Guess");
+        window.draw(guess_text_3);
+        guess_text_4.setString("4) Guess");
+        window.draw(guess_text_4);
+        guess_text_5.setString("5) Guess");
+        window.draw(guess_text_5);
+        guess_text_6.setString("6) Guess");
+        window.draw(guess_text_6);
+        guess_text_7.setString("7) Guess");
+        window.draw(guess_text_7);
+        guess_text_8.setString("8) Guess");
+        window.draw(guess_text_8);
+        guess_text_9.setString("9) Guess");
+        window.draw(guess_text_9);
+        hint_text.setString("Hint:");
+        window.draw(hint_text);
+        window.draw(score_text);
+        window.draw(score_num);
+        window.display();
+      }
+    }
   }
 
   return 0;
