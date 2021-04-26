@@ -74,7 +74,7 @@ std::vector <category> languages{
   {"Matlab", "Excellent Visualization", "Data Analysis", "Used by most engineers"},
   {"Java", "Easy", "Widely-used", "Server-side language"},
   {"Javascript", "Build websites", "Makes User-interfaces", "Recently turned 25"},
-  {"R", "Data-analsis", "Open-source", "Machine-learning equations"},
+  {"R", "Data-analysis", "Open-source", "Machine-learning equations"},
   {"Reactnative", "Mobile apps", "Made by Facebook", "Younger Language"},
   {"Assembly", "Lowest-level", "Hard to debug", "direct hardware manipulation"}
 };
