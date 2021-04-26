@@ -1,2 +1,4 @@
-# Team4
-Repository for EC327 Team 4's Final Project
+# Guess What?!
+
+Guess What?! is a guessing game for developing problem solving skills though the process of elimination.
+
