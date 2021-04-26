@@ -1,3 +1,8 @@
+# Copyright 2021 F. Alshammari fahed@bu.edu
+# Copyright 2021 S. Deckers sebd@bu.edu
+# Copyright 2021 C. McBride mcbridec@bu.edu
+# Copyright 2021 J. Wang jaswang@bu.edu
+
 // To compile this program, type "make game" into the terminal.
 
 #include<iostream>
