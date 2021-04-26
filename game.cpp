@@ -89,15 +89,15 @@ int main() {
 
   // This block of items creates the elements used for the main page
 
-    // Background Box
+  // Background Box
   sf::RectangleShape box(sf::Vector2f(windowwidth-2, windowheight-2));
   box.setFillColor(sf::Color(210,210,210));
   box.setOutlineColor(sf::Color(125,125,125));
   box.setOutlineThickness(1);
   box.setPosition(1, 1);
 
-    // Rectangles for the 5 categories
-    // Custom colors created by combining (R,G,B) values
+  // Rectangles for the 5 categories
+  // Custom colors created by combining (R,G,B) values
   int cat_box_width = 600;
   int cat_box_height = 100;
   sf::RectangleShape cat_1_box(sf::Vector2f(cat_box_width, cat_box_height));
@@ -121,7 +121,7 @@ int main() {
   cat_4_box.setOutlineColor(sf::Color(185,185,185));
   cat_4_box.setPosition(200, 600);
 
-    // Rectangles for the 9 guesses in each category
+  // Rectangles for the 9 guesses in each category
   int guessbox_width = 300;
   int guessbox_height = 50;
   sf::RectangleShape hint_box(sf::Vector2f(cat_box_width, 75));
@@ -175,23 +175,24 @@ int main() {
   guess_box_9.setOutlineColor(sf::Color(185,185,185));
   guess_box_9.setPosition(350, 675);
 
-  // Creates the different text elements for the main screen
-    // Creates the fonts used for each of the text blocks (can be anything in the VM,
-    // just browse and choose what you like)
+  //Creates the different text elements for the main screen
+  //Creates the fonts used for each of the text blocks (can be anything in the VM,
+  //just browse and choose what you like)
   sf::Font topfont;
   sf::Font categoryfont;
   topfont.loadFromFile("/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf");
   categoryfont.loadFromFile("/usr/share/fonts/truetype/ubuntu/Ubuntu-Th.ttf");
-    // Custom colors created by combining (R,G,B) values
+  // Custom colors created by combining (R,G,B) values
 
-    // Text for the top banner on the main screen
+  // Text for the top banner on the main screen
   sf::Text toptext;
   toptext.setFont(topfont);
   toptext.setPosition(100, 50);
   toptext.setString("Let's Play! Select A Category...");
   toptext.setCharacterSize(50);
   toptext.setFillColor(sf::Color(0,0,128));
-    // Text for each of the four categories
+  
+  // Text for each of the four categories
   sf::Text cat_one_text;
   cat_one_text.setFont(topfont);
   cat_one_text.setPosition(225, 170);
@@ -219,16 +220,9 @@ int main() {
   cat_four_text.setString("D)      Sports");
   cat_four_text.setCharacterSize(50);
   cat_four_text.setFillColor(sf::Color(0,0,128));
-  cat_four_text.setOutlineThickness(0);
-  // sf::Text cat_five_text;
-  // cat_five_text.setFont(topfont);
-  // cat_five_text.setPosition(225, 620);
-  // cat_five_text.setString("E) Coding Languages");
-  // cat_five_text.setCharacterSize(50);
-  // cat_five_text.setFillColor(sf::Color(0,0,128));
-  // cat_five_text.setOutlineThickness(0);
-
-    // creating the text for the score
+  cat_four_text.setOutlineThickness(0); 
+  
+  // creating the text for the score
   sf::Text score_text;
   score_text.setFont(topfont);
   score_text.setPosition(800, 735);
@@ -239,12 +233,12 @@ int main() {
   sf::Text score_num;
   score_num.setFont(topfont);
   score_num.setPosition(907, 735);
-  score_num.setString("0"); //Replace "num" with points (int to string)
+  score_num.setString("0"); //Replace "num" with points (int to string) in if else
   score_num.setCharacterSize(35);
   score_num.setFillColor(sf::Color(5,102,8));
   score_num.setOutlineThickness(0);
   
-  // creating the text for the running high score
+  //creating the text for the running high score
   sf::Text highscore_text;
   highscore_text.setFont(topfont);
   highscore_text.setPosition(50, 735);
@@ -255,13 +249,13 @@ int main() {
   sf::Text highscore_num;
   highscore_num.setFont(topfont);
   highscore_num.setPosition(237, 735);
-  highscore_num.setString("0"); //Replace "num" with points (int to string)
+  highscore_num.setString("0"); //Replace "num" with points (int to string) in if else
   highscore_num.setCharacterSize(35);
   highscore_num.setFillColor(sf::Color(150,0,0));
   highscore_num.setOutlineThickness(0);
 
-    // creating the text for each of the guesses for each category
-    // note - the strings will be assigned later
+  //creating the text for each of the guesses for each category
+  //note - the strings will be assigned later
   sf::Text guess_text_1;
   guess_text_1.setFont(topfont);
   guess_text_1.setPosition(155, 177);
@@ -303,9 +297,8 @@ int main() {
   hint_text.setPosition(205, 75);
   hint_text.setFillColor(sf::Color::White);
 
-  // Not sure if this is needed or not...
+  //Not sure if this is needed or not...
   window.setFramerateLimit(10);
-
 
   std::string str;
   int points = 0;
@@ -319,6 +312,7 @@ int main() {
     sol.push_back(line);
   }
   file.close();
+  
   // Opens the GUI and keeps it open until it is closed
   while (window.isOpen()) {
     sf::Event event;
@@ -354,12 +348,11 @@ int main() {
         std::this_thread::sleep_for(std::chrono::seconds(10));
         break;
       }
-
     }
-    // Print all the elements that have been created for the main page.
-    // Note, these are printed in order. If you want something to be in the
-    //   background it needs to be printed first/early. If you want something
-    //     to be in the foregroud, it needs to be printed last/later.
+    //Print all the elements that have been created for the main page.
+    //Note, these are printed in order. If you want something to be in the
+    //background it needs to be printed first/early. If you want something
+    //to be in the foregroud, it needs to be printed last/later.
     window.clear();
     window.draw(box);
     window.draw(toptext);
@@ -377,11 +370,10 @@ int main() {
     window.draw(highscore_text);
     window.draw(highscore_num);
 
-    // Displays the window created from the actions above
+    //Displays the window created from the actions above
     window.display();
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-
 
       while (window.isOpen()) {
         sf::Event event;
@@ -446,7 +438,6 @@ int main() {
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
-
 
               window.draw(hint_box);
 
@@ -554,8 +545,6 @@ int main() {
             temp = 0;
             break;
           }
-
-
         }
 
         points = points + temp;
@@ -589,7 +578,6 @@ int main() {
 
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
-
 
       while (window.isOpen()) {
         sf::Event event;
@@ -652,7 +640,6 @@ int main() {
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
-
 
               window.draw(hint_box);
 
@@ -760,8 +747,6 @@ int main() {
             temp = 0;
             break;
           }
-
-
         }
 
         points = points + temp;
@@ -775,23 +760,6 @@ int main() {
       }
 
     }
-    // if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
-    //   while (window.isOpen()) {
-    //     sf::Event event;
-    //     while (window.pollEvent(event)) {
-    //       if (event.type == sf::Event::Closed)
-    //         window.close();
-    //     }
-    //     window.clear();
-    //     window.draw(box);
-    //     window.draw(cat_2_box);
-    //     window.draw(cat_two_text);
-    //     window.display();
-    //     int temp{country()};
-    //     points = points + temp;
-    //     std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
-    //     break;
-    //   }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
 
@@ -857,7 +825,6 @@ int main() {
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
-
 
               window.draw(hint_box);
 
@@ -965,8 +932,6 @@ int main() {
             temp = 0;
             break;
           }
-
-
         }
 
         points = points + temp;
@@ -982,7 +947,6 @@ int main() {
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-
 
       while (window.isOpen()) {
         sf::Event event;
@@ -1045,7 +1009,6 @@ int main() {
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
-
 
               window.draw(hint_box);
 
@@ -1153,8 +1116,6 @@ int main() {
             temp = 0;
             break;
           }
-
-
         }
 
         points = points + temp;
@@ -1170,7 +1131,6 @@ int main() {
     }
 
 if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-
 
       while (window.isOpen()) {
         sf::Event event;
@@ -1233,7 +1193,6 @@ if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
-
 
               window.draw(hint_box);
 
@@ -1341,8 +1300,6 @@ if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
             temp = 0;
             break;
           }
-
-
         }
 
         points = points + temp;
