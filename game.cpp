@@ -30,21 +30,22 @@ int main() {
   // Rectangles for the 5 categories
   int buttonwidth = 600;
   int buttonheight = 100;
-  int guessbox_dimension = 150;
+  int guessbox_width = 300;
+  int guessbox_height = 50;
   sf::RectangleShape cat_1_box(sf::Vector2f(buttonwidth, buttonheight));
   sf::RectangleShape cat_2_box(sf::Vector2f(buttonwidth, buttonheight));
   sf::RectangleShape cat_3_box(sf::Vector2f(buttonwidth, buttonheight));
   sf::RectangleShape cat_4_box(sf::Vector2f(buttonwidth, buttonheight));
-  sf::RectangleShape guess_box_1(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_2(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_3(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_4(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_5(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_6(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_7(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_8(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape guess_box_9(sf::Vector2f(guessbox_dimension, guessbox_dimension));
-  sf::RectangleShape hint_box(sf::Vector2f(buttonwidth, buttonheight));
+  sf::RectangleShape guess_box_1(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_2(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_3(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_4(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_5(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_6(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_7(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_8(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape guess_box_9(sf::Vector2f(guessbox_width, guessbox_height));
+  sf::RectangleShape hint_box(sf::Vector2f(buttonwidth, 75));
 
 
   // Creates the different text elements for the main screen
@@ -58,6 +59,15 @@ int main() {
   sf::Text cat_four_text;
   sf::Text cat_five_text;
   sf::Text score;
+  sf::Text guess_text_1;
+  sf::Text guess_text_2;
+  sf::Text guess_text_3;
+  sf::Text guess_text_4;
+  sf::Text guess_text_5;
+  sf::Text guess_text_6;
+  sf::Text guess_text_7;
+  sf::Text guess_text_8;
+  sf::Text guess_text_9;
   cat_1_box.setFillColor(sf::Color(200, 30, 100));
   cat_1_box.setOutlineThickness(1);
   cat_1_box.setOutlineColor(sf::Color::White);
@@ -124,16 +134,16 @@ int main() {
   cat_2_box.setPosition(200, 300);
   cat_3_box.setPosition(200, 450);
   cat_4_box.setPosition(200, 600);
-  hint_box.setPosition(200, 25);
-  guess_box_1.setPosition(225, 150);
-  guess_box_2.setPosition(425, 150);
-  guess_box_3.setPosition(625, 150);
-  guess_box_4.setPosition(225, 350);
-  guess_box_5.setPosition(425, 350);
-  guess_box_6.setPosition(625, 350);
-  guess_box_7.setPosition(225, 550);
-  guess_box_8.setPosition(425, 550);
-  guess_box_9.setPosition(625, 550);
+  hint_box.setPosition(200, 50);
+  guess_box_1.setPosition(150, 175);
+  guess_box_2.setPosition(550, 175);
+  guess_box_3.setPosition(150, 300);
+  guess_box_4.setPosition(550, 300);
+  guess_box_5.setPosition(150, 425);
+  guess_box_6.setPosition(550, 425);
+  guess_box_7.setPosition(150, 550);
+  guess_box_8.setPosition(550, 550);
+  guess_box_9.setPosition(350, 675);
 
   toptext.setPosition(100, 50);
   cat_one_text.setPosition(225, 170);
@@ -146,19 +156,19 @@ int main() {
   toptext.setString("Let's Play! Select A Category...");
   toptext.setCharacterSize(50);
   toptext.setFillColor(sf::Color::White);
-  cat_one_text.setString("1)      Animals");
+  cat_one_text.setString("A)      Animals");
   cat_one_text.setCharacterSize(50);
   cat_one_text.setFillColor(sf::Color::Black);
   cat_one_text.setOutlineThickness(0);
-  cat_two_text.setString("2)     Countries");
+  cat_two_text.setString("B)     Countries");
   cat_two_text.setCharacterSize(50);
   cat_two_text.setFillColor(sf::Color::Black);
   cat_two_text.setOutlineThickness(0);
-  cat_three_text.setString("3)       Food");
+  cat_three_text.setString("C)       Food");
   cat_three_text.setCharacterSize(50);
   cat_three_text.setFillColor(sf::Color::Black);
   cat_three_text.setOutlineThickness(0);
-  cat_four_text.setString("4)      Sports");
+  cat_four_text.setString("D)      Sports");
   cat_four_text.setCharacterSize(50);
   cat_four_text.setFillColor(sf::Color::Black);
   cat_four_text.setOutlineThickness(0);
@@ -193,7 +203,7 @@ int main() {
     // Displays the window created from the actions above
     window.display();
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 
 
       while (window.isOpen()) {
