@@ -1,8 +1,3 @@
-# Copyright 2021 F. Alshammari fahed@bu.edu
-# Copyright 2021 S. Deckers sebd@bu.edu
-# Copyright 2021 C. McBride mcbridec@bu.edu
-# Copyright 2021 J. Wang jaswang@bu.edu
-
 // To compile this program, type "make game" into the terminal.
 
 #include<iostream>
@@ -10,6 +5,7 @@
 #include<ctime>
 #include<SFML/Graphics.hpp>
 #include<string>
+#include<SFML/Window/Keyboard.hpp>
 using std::cin;
 using std::cout;
 using std::string;
@@ -26,7 +22,7 @@ int main() {
   // This block of items creates the elements used for the main page
 
   // Background Box
-  sf::RectangleShape box(sf::Vector2f(900,700));
+  sf::RectangleShape box(sf::Vector2f(900, 700));
   box.setFillColor(sf::Color::Red);
   box.setOutlineColor(sf::Color::White);
   box.setOutlineThickness(1);
@@ -90,32 +86,32 @@ int main() {
   cat_3_box.setPosition(200, 300);
   cat_4_box.setPosition(200, 400);
   cat_5_box.setPosition(200, 500);
-  toptext.setPosition(275,0);
+  toptext.setPosition(275, 0);
   cat_one_text.setPosition(420, 100);
   cat_two_text.setPosition(420, 200);
   cat_three_text.setPosition(420, 300);
   cat_four_text.setPosition(420, 400);
   cat_five_text.setPosition(420, 500);
 
-    // Assign the text that will be displayed for each element.
-    toptext.setString("Let's Play! Select A Category...");
-    toptext.setFillColor(sf::Color::White);
-    cat_one_text.setString("Category 1");
-    cat_one_text.setFillColor(sf::Color::Black);
-    cat_one_text.setOutlineThickness(0);
-    cat_two_text.setString("Category 1");
-    cat_two_text.setFillColor(sf::Color::Black);
-    cat_two_text.setOutlineThickness(0);
-    cat_three_text.setString("Category 3");
-    cat_three_text.setFillColor(sf::Color::Black);
-    cat_three_text.setOutlineThickness(0);
-    cat_four_text.setString("Category 4");
-    cat_four_text.setFillColor(sf::Color::Black);
-    cat_four_text.setOutlineThickness(0);
-    cat_five_text.setString("Category 5");
-    cat_five_text.setFillColor(sf::Color::Black);
-    cat_five_text.setOutlineThickness(0);
-    
+  // Assign the text that will be displayed for each element.
+  toptext.setString("Let's Play! Select A Category...");
+  toptext.setFillColor(sf::Color::White);
+  cat_one_text.setString("Category 1");
+  cat_one_text.setFillColor(sf::Color::Black);
+  cat_one_text.setOutlineThickness(0);
+  cat_two_text.setString("Category 1");
+  cat_two_text.setFillColor(sf::Color::Black);
+  cat_two_text.setOutlineThickness(0);
+  cat_three_text.setString("Category 3");
+  cat_three_text.setFillColor(sf::Color::Black);
+  cat_three_text.setOutlineThickness(0);
+  cat_four_text.setString("Category 4");
+  cat_four_text.setFillColor(sf::Color::Black);
+  cat_four_text.setOutlineThickness(0);
+  cat_five_text.setString("Category 5");
+  cat_five_text.setFillColor(sf::Color::Black);
+  cat_five_text.setOutlineThickness(0);
+
   // Opens the GUI and keeps it open until it is closed
   while (window.isOpen()) {
     sf::Event event;
@@ -123,8 +119,6 @@ int main() {
       if (event.type == sf::Event::Closed)
         window.close();
     }
-
-
 
     // Print all the elements that have been created for the main page.
     // Note, these are printed in order. If you want something to be in the
@@ -137,15 +131,30 @@ int main() {
     window.draw(cat_2_box);
     window.draw(cat_3_box);
     window.draw(cat_4_box);
-    window.draw(cat_5_box);
     window.draw(cat_one_text);
     window.draw(cat_two_text);
     window.draw(cat_three_text);
     window.draw(cat_four_text);
-    window.draw(cat_five_text);
 
     // Displays the window created from the actions above
     window.display();
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+
+
+      while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+          if (event.type == sf::Event::Closed)
+            window.close();
+        }
+        window.clear();
+        window.draw(box);
+        window.draw(cat_5_box);
+        window.draw(cat_five_text);
+        window.display();
+      }
+    }
   }
 
   return 0;
@@ -160,5 +169,5 @@ int main() {
 // 2) There will need to be a way of detecting the click of a mouse on each of
 //  the boxes for each category. On the main page, it will take you to the
 //   category you click on (no action if no category is clicked). Within a
-//    category, it will register as the player's guess on an image (no action 
+//    category, it will register as the player's guess on an image (no action
 //     if no image is clicked)
