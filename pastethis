@@ -1,0 +1,204 @@
+//add this directly after sports:
+std::vector <category> languages{
+  {"C", "Low-level", "Stable:2018", "Lacking built-in function"},
+  {"C++", ".at() not []", "Stable:2020", "Great class at BU"},
+  {"Python", "Many Libraries", "High-level", "Slower speed"},
+  {"Matlab", "Excellent Visualization", "Data Analysis", "Used by most engineers"},
+  {"Java", "Easy", "Widely-used", "Server-side language"},
+  {"Javascript", "Build websites", "Makes User-interfaces", "Recently turned 25"},
+  {"R", "Data-analsis", "Open-source", "Machine-learning equations"},
+  {"Reactnative", "Mobile apps", "Made by Facebook", "Younger Language"},
+  {"Assembly", "Lowest-level", "Hard to debug", "direct hardware manipulation"}
+};
+
+
+
+
+//add this after press D:
+if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+
+
+      while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+          if (event.type == sf::Event::Closed)
+            window.close();
+        }
+
+        window.clear();
+        window.draw(box);
+        window.draw(highscore_text);
+        window.draw(highscore_num);
+        window.draw(hint_box);
+        window.draw(guess_box_1);
+        window.draw(guess_box_2);
+        window.draw(guess_box_3);
+        window.draw(guess_box_4);
+        window.draw(guess_box_5);
+        window.draw(guess_box_6);
+        window.draw(guess_box_7);
+        window.draw(guess_box_8);
+        window.draw(guess_box_9);
+        guess_text_1.setString("1) C");
+        window.draw(guess_text_1);
+        guess_text_2.setString("2) C++");
+        window.draw(guess_text_2);
+        guess_text_3.setString("3) Python");
+        window.draw(guess_text_3);
+        guess_text_4.setString("4) Matlab");
+        window.draw(guess_text_4);
+        guess_text_5.setString("5) Java");
+        window.draw(guess_text_5);
+        guess_text_6.setString("6) Javascript");
+        window.draw(guess_text_6);
+        guess_text_7.setString("7) R");
+        window.draw(guess_text_7);
+        guess_text_8.setString("8) Reactnative");
+        window.draw(guess_text_8);
+        guess_text_9.setString("9) Assembly");
+        window.draw(guess_text_9);
+        hint_text.setString("Hint:");
+
+        window.display();
+        srand(time(0));
+        int v = rand() % 9;
+        int ans = 0;
+        int temp = 30;
+
+        for(int i = 1; i < 4; i++) {
+          bool ans1 = true;
+          window.draw(hint_box);
+
+          window.draw(score_text);
+          std::string str = std::to_string(points);
+          score_num.setString(str);
+          window.draw(score_num);
+          hint_text.setString("Hint: " + languages.at(v).at(i));
+          window.draw(hint_text);
+          window.display();
+          while (ans1 == true) {
+            std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+
+
+              window.draw(hint_box);
+
+              hint_text.setString("Hint: " + languages.at(v).at(i));
+              window.draw(hint_text);
+              window.display();
+              ans1 = false;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+              ans = 1;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+              ans = 2;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+              ans = 3;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+              ans = 4;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+              ans = 5;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+              ans = 6;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+              ans = 7;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+              ans = 8;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+              ans = 9;
+              break;
+            }
+
+          }
+          while(i == 3) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+              ans = 1;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+              ans = 2;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+              ans = 3;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+              ans = 4;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+              ans = 5;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+              ans = 6;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+              ans = 7;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+              ans = 8;
+              break;
+              break;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+              ans = 9;
+              break;
+              break;
+            }
+
+          }
+          temp = temp - 10;
+          if (ans == v + 1) {
+            std::string str = std::to_string(points);
+            score_num.setString(str);
+
+            window.draw(score_num);
+            window.display();
+            break;
+          } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
+
+            temp = 0;
+            break;
+          }
+
+
+        }
+
+        points = points + temp;
+        std::string str = std::to_string(points);
+        score_num.setString(str);
+        round_counter++;
+        window.draw(score_num);
+        window.display();
+        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
+        break;//break;
+      }
+
+    }
