@@ -201,6 +201,7 @@ int main() {
   score_num.setCharacterSize(35);
   score_num.setFillColor(sf::Color(5,102,8));
   score_num.setOutlineThickness(0);
+  
   // creating the text for the running high score
   highscore_text.setFont(topfont);
   highscore_text.setPosition(50, 735);
@@ -335,10 +336,10 @@ int main() {
       }
 
     }
-    // Print all the elements that have been created for the main page.
+    //Print all the elements that have been created for the main page.
     // Note, these are printed in order. If you want something to be in the
-    //   background it needs to be printed first/early. If you want something
-    //     to be in the foregroud, it needs to be printed last/later.
+    //background it needs to be printed first/early. If you want something
+    //to be in the foregroud, it needs to be printed last/later.
     window.clear();
     window.draw(box);
     window.draw(toptext);
@@ -356,7 +357,7 @@ int main() {
     window.draw(highscore_text);
     window.draw(highscore_num);
 
-    // Displays the window created from the actions above
+    //Displays the window created from the actions above
     window.display();
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
@@ -548,25 +549,7 @@ int main() {
       }
 
     }
-    // if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
-    //   while (window.isOpen()) {
-    //     sf::Event event;
-    //     while (window.pollEvent(event)) {
-    //       if (event.type == sf::Event::Closed)
-    //         window.close();
-    //     }
-    //     window.clear();
-    //     window.draw(box);
-    //     window.draw(cat_2_box);
-    //     window.draw(cat_two_text);
-    //     window.display();
-    //     int temp{country()};
-    //     points = points + temp;
-    //     std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
-    //     break;
-    //   }
-
-
+ 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
 
 
@@ -754,23 +737,6 @@ int main() {
       }
 
     }
-    // if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
-    //   while (window.isOpen()) {
-    //     sf::Event event;
-    //     while (window.pollEvent(event)) {
-    //       if (event.type == sf::Event::Closed)
-    //         window.close();
-    //     }
-    //     window.clear();
-    //     window.draw(box);
-    //     window.draw(cat_2_box);
-    //     window.draw(cat_two_text);
-    //     window.display();
-    //     int temp{country()};
-    //     points = points + temp;
-    //     std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
-    //     break;
-    //   }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
 
