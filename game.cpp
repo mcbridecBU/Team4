@@ -81,6 +81,9 @@ std::vector <category> languages{
 
 int main() {
   int round_counter = 0; //counter for max rounds.
+  bool endgame = false;
+  std::string rc_str = std::to_string(round_counter);
+  std::string points_str;
   // These lines establish and name the window for the GUI
   int windowheight = 800;
   int windowwidth = 1000;
@@ -187,10 +190,75 @@ int main() {
   // Text for the top banner on the main screen
   sf::Text toptext;
   toptext.setFont(topfont);
-  toptext.setPosition(100, 50);
+  toptext.setPosition(100, 15);
   toptext.setString("Let's Play! Select A Category...");
   toptext.setCharacterSize(50);
   toptext.setFillColor(sf::Color(0,0,128));
+  // Text for setting a high score page
+  sf::Text congrats_text;
+  congrats_text.setFont(topfont);
+  congrats_text.setPosition(225, 100);
+  congrats_text.setString("Congratulations!");
+  congrats_text.setCharacterSize(70);
+  congrats_text.setFillColor(sf::Color(5,102,8));
+  sf::Text highscore_set_text;
+  highscore_set_text.setFont(topfont);
+  highscore_set_text.setPosition(150, 200);
+  highscore_set_text.setString("You have set a new highscore!");
+  highscore_set_text.setCharacterSize(50);
+  highscore_set_text.setFillColor(sf::Color(5,102,8));
+  sf::Text display_score;
+  display_score.setFont(topfont);
+  display_score.setPosition(350, 275);
+  display_score.setCharacterSize(50);
+  display_score.setFillColor(sf::Color(150,0,0));
+  // Text for game over
+  sf::Text endgame_text1;
+  endgame_text1.setFont(topfont);
+  endgame_text1.setPosition(200, 100);
+  endgame_text1.setString("Thanks for playing");
+  endgame_text1.setCharacterSize(70);
+  endgame_text1.setFillColor(sf::Color(5,102,8));
+
+  // Text to play a new game
+  sf::Text newgame_text;
+  newgame_text.setFont(topfont);
+  newgame_text.setPosition(325, 500);
+  newgame_text.setString("Play again? y/n");
+  newgame_text.setCharacterSize(50);
+  newgame_text.setFillColor(sf::Color(0,0,128));
+
+  //::Text for the round counter
+  sf::Text round_text;
+  round_text.setFont(topfont);
+  round_text.setPosition(435, 80);
+  round_text.setString("Round " + rc_str);
+  round_text.setCharacterSize(45);
+  round_text.setFillColor(sf::Color::White);
+  round_text.setOutlineThickness(0);
+  round_text.setOutlineThickness(1);
+  round_text.setOutlineColor(sf::Color(0,0,128));
+  // Text for an incorrect answer
+  sf::Text incorrect_text;
+  incorrect_text.setFont(topfont);
+  incorrect_text.setPosition(400, 350);
+  incorrect_text.setString("Incorrect");
+  incorrect_text.setCharacterSize(50);
+  incorrect_text.setFillColor(sf::Color(150,0,0));
+  // Text for a correct answer
+  sf::Text correct_text;
+  correct_text.setFont(topfont);
+  correct_text.setPosition(420, 300);
+  correct_text.setString("Correct!");
+  correct_text.setCharacterSize(50);
+  correct_text.setFillColor(sf::Color(5,102,8));
+  // Text for points earned
+  sf::Text points_text;
+  points_text.setFont(topfont);
+  points_text.setPosition(310, 350);
+  points_text.setString("Points Earned: " + points_str);
+  points_text.setCharacterSize(50);
+  points_text.setFillColor(sf::Color(5,102,8));
   
   // Text for each of the four categories
   sf::Text cat_one_text;
@@ -302,16 +370,9 @@ int main() {
 
   std::string str;
   int points = 0;
-  std::vector<std::string> sol;
-  std::vector<std::string> sol2;
-  std::ifstream file;
+ 
 
-  file.open("highscore.txt");
-  std::string line;
-  while(std::getline(file, line)) {
-    sol.push_back(line);
-  }
-  file.close();
+  
   
   // Opens the GUI and keeps it open until it is closed
   while (window.isOpen()) {
@@ -320,7 +381,15 @@ int main() {
       if (event.type == sf::Event::Closed)
         window.close();
     }
-    if (round_counter == 4) {
+    std::vector<std::string> sol;
+    std::ifstream file;
+    file.open("highscore.txt");
+    std::string line;
+    while(std::getline(file, line)) {
+    sol.push_back(line);
+    }
+    file.close();
+ if (round_counter == 4) {
 
       std::string::size_type sz;
       int rec = std::stoi(sol.at(0), &sz);
@@ -328,25 +397,55 @@ int main() {
         window.clear();
         window.draw(box);
         std::string str = std::to_string(points);
-        toptext.setString("Congrats you have set a\n new highscore \n and accumulated \n a point total of: " + str);
-        window.draw(toptext);
+        window.draw(congrats_text);
+        window.draw(highscore_set_text);
+        display_score.setString("Highscore: " + str);
+        window.draw(display_score);
+        window.draw(newgame_text);
         window.display();
-        std::this_thread::sleep_for(std::chrono::seconds(10));
 
         std::ofstream ofile;
         ofile.open("highscore.txt", std::ofstream::out | std::ofstream::trunc);
         ofile << points;
         ofile.close();
-        break;
-      } else if(points < rec) {
+        while (round_counter == 4) {
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
+          endgame = true;
+          break;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+          endgame = false;
+          break;
+        }
+      }
+
+      } else if(points <= rec) {
         window.clear();
         window.draw(box);
         std::string str = std::to_string(points);
-        toptext.setString("Game over. You have accumulated \n a point total of: " + str + "\n\nPlay again!");
-        window.draw(toptext);
+        window.draw(endgame_text1);
+        display_score.setString("Yourscore: " + str);
+        window.draw(display_score);
+        window.draw(newgame_text);
         window.display();
-        std::this_thread::sleep_for(std::chrono::seconds(10));
+
+        while (round_counter == 4) {
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
+          endgame = true;
+          break;
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+          endgame = false;
+          break;
+        }
+      }
+    }
+      if (endgame == true) {
         break;
+        window.close();
+      }
+      if (endgame == false) {
+        round_counter = 0;
+        points = 0;
+        str = std::to_string(points);
       }
     }
     //Print all the elements that have been created for the main page.
@@ -356,6 +455,9 @@ int main() {
     window.clear();
     window.draw(box);
     window.draw(toptext);
+    rc_str = std::to_string(round_counter+1);
+    round_text.setString("Round " + rc_str);
+    window.draw(round_text);
     window.draw(cat_1_box);
     window.draw(cat_2_box);
     window.draw(cat_3_box);
@@ -365,6 +467,8 @@ int main() {
     window.draw(cat_three_text);
     window.draw(cat_four_text);
     window.draw(score_text);
+    str = std::to_string(points);
+    score_num.setString(str);
     window.draw(score_num);
     highscore_num.setString(sol.at(0));
     window.draw(highscore_text);
@@ -427,7 +531,7 @@ int main() {
           window.draw(hint_box);
 
           window.draw(score_text);
-          std::string str = std::to_string(points);
+          str = std::to_string(points);
           score_num.setString(str);
           window.draw(score_num);
           hint_text.setString("Hint: " + animals.at(v).at(i));
@@ -537,12 +641,23 @@ int main() {
             std::string str = std::to_string(points);
             score_num.setString(str);
 
-            window.draw(score_num);
+            window.clear();
+            window.draw(box);
+            window.draw(correct_text);
+            points_str = std::to_string(temp);
+            points_text.setString("Points Earned: " + points_str);
+            window.draw(points_text);
             window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
 
             temp = 0;
+            window.clear();
+            window.draw(box);
+            window.draw(incorrect_text);
+            window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           }
         }
@@ -553,7 +668,6 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
         break;//break;
       }
 
@@ -739,12 +853,23 @@ int main() {
             std::string str = std::to_string(points);
             score_num.setString(str);
 
-            window.draw(score_num);
+            window.clear();
+            window.draw(box);
+            window.draw(correct_text);
+            points_str = std::to_string(temp);
+            points_text.setString("Points Earned: " + points_str);
+            window.draw(points_text);
             window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
 
             temp = 0;
+            window.clear();
+            window.draw(box);
+            window.draw(incorrect_text);
+            window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           }
         }
@@ -755,7 +880,6 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
         break;//break;
       }
 
@@ -924,12 +1048,23 @@ int main() {
             std::string str = std::to_string(points);
             score_num.setString(str);
 
-            window.draw(score_num);
+            window.clear();
+            window.draw(box);
+            window.draw(correct_text);
+            points_str = std::to_string(temp);
+            points_text.setString("Points Earned: " + points_str);
+            window.draw(points_text);
             window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
 
             temp = 0;
+            window.clear();
+            window.draw(box);
+            window.draw(incorrect_text);
+            window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           }
         }
@@ -940,7 +1075,6 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
         break;//break;
       }
 
@@ -1108,12 +1242,23 @@ int main() {
             std::string str = std::to_string(points);
             score_num.setString(str);
 
-            window.draw(score_num);
+            window.clear();
+            window.draw(box);
+            window.draw(correct_text);
+            points_str = std::to_string(temp);
+            points_text.setString("Points Earned: " + points_str);
+            window.draw(points_text);
             window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
 
             temp = 0;
+            window.clear();
+            window.draw(box);
+            window.draw(incorrect_text);
+            window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           }
         }
@@ -1124,7 +1269,6 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
         break;//break;
       }
 
@@ -1287,17 +1431,28 @@ if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
             }
 
           }
-          temp = temp - 10;
+          temp = temp - 5;
           if (ans == v + 1) {
             std::string str = std::to_string(points);
             score_num.setString(str);
 
-            window.draw(score_num);
+            window.clear();
+            window.draw(box);
+            window.draw(correct_text);
+            points_str = std::to_string(temp);
+            points_text.setString("Points Earned: " + points_str);
+            window.draw(points_text);
             window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           } else if ((ans != v + 1 & ans != 10 & ans != 0) | i == 3)  {
 
             temp = 0;
+            window.clear();
+            window.draw(box);
+            window.draw(incorrect_text);
+            window.display();
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             break;
           }
         }
@@ -1308,7 +1463,6 @@ if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
         round_counter++;
         window.draw(score_num);
         window.display();
-        std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
         break;//break;
       }
 
