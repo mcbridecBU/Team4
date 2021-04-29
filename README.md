@@ -6,6 +6,7 @@ The files that must be downloaded to runt he program are:
 1) "game.cpp"
 2) Makefile
 3) "highscore.txt"
+
 To compile the game itself, the attatched makefile is required. It makes sure to include all the necessary sfml modules (graphics, system, and window).
 1) Ensure that makefile is in the same directory as the game.cpp file.
 2) Navigate to the directory using a terminal window.
