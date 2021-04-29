@@ -93,9 +93,9 @@ int main() {
   // This block of items creates the elements used for the main page
 
   // Background Box
-  sf::RectangleShape box(sf::Vector2f(windowwidth-2, windowheight-2));
-  box.setFillColor(sf::Color(210,210,210));
-  box.setOutlineColor(sf::Color(125,125,125));
+  sf::RectangleShape box(sf::Vector2f(windowwidth - 2, windowheight - 2));
+  box.setFillColor(sf::Color(210, 210, 210));
+  box.setOutlineColor(sf::Color(125, 125, 125));
   box.setOutlineThickness(1);
   box.setPosition(1, 1);
 
@@ -106,22 +106,22 @@ int main() {
   sf::RectangleShape cat_1_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_1_box.setFillColor(sf::Color::White);
   cat_1_box.setOutlineThickness(3);
-  cat_1_box.setOutlineColor(sf::Color(185,185,185));
+  cat_1_box.setOutlineColor(sf::Color(185, 185, 185));
   cat_1_box.setPosition(200, 150);
   sf::RectangleShape cat_2_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_2_box.setFillColor(sf::Color::White);
   cat_2_box.setOutlineThickness(3);
-  cat_2_box.setOutlineColor(sf::Color(185,185,185));
+  cat_2_box.setOutlineColor(sf::Color(185, 185, 185));
   cat_2_box.setPosition(200, 300);
   sf::RectangleShape cat_3_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_3_box.setFillColor(sf::Color::White);
   cat_3_box.setOutlineThickness(3);
-  cat_3_box.setOutlineColor(sf::Color(185,185,185));
+  cat_3_box.setOutlineColor(sf::Color(185, 185, 185));
   cat_3_box.setPosition(200, 450);
   sf::RectangleShape cat_4_box(sf::Vector2f(cat_box_width, cat_box_height));
   cat_4_box.setFillColor(sf::Color::White);
   cat_4_box.setOutlineThickness(3);
-  cat_4_box.setOutlineColor(sf::Color(185,185,185));
+  cat_4_box.setOutlineColor(sf::Color(185, 185, 185));
   cat_4_box.setPosition(200, 600);
 
   // Rectangles for the 9 guesses in each category
@@ -135,47 +135,47 @@ int main() {
   sf::RectangleShape guess_box_1(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_1.setFillColor(sf::Color::White);
   guess_box_1.setOutlineThickness(3);
-  guess_box_1.setOutlineColor(sf::Color(185,185,185));
+  guess_box_1.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_1.setPosition(150, 175);
   sf::RectangleShape guess_box_2(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_2.setFillColor(sf::Color::White);
   guess_box_2.setOutlineThickness(3);
-  guess_box_2.setOutlineColor(sf::Color(185,185,185));
+  guess_box_2.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_2.setPosition(550, 175);
   sf::RectangleShape guess_box_3(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_3.setFillColor(sf::Color::White);
   guess_box_3.setOutlineThickness(3);
-  guess_box_3.setOutlineColor(sf::Color(185,185,185));
+  guess_box_3.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_3.setPosition(150, 300);
   sf::RectangleShape guess_box_4(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_4.setFillColor(sf::Color::White);
   guess_box_4.setOutlineThickness(3);
-  guess_box_4.setOutlineColor(sf::Color(185,185,185));
+  guess_box_4.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_4.setPosition(550, 300);
   sf::RectangleShape guess_box_5(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_5.setFillColor(sf::Color::White);
   guess_box_5.setOutlineThickness(3);
-  guess_box_5.setOutlineColor(sf::Color(185,185,185));
+  guess_box_5.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_5.setPosition(150, 425);
   sf::RectangleShape guess_box_6(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_6.setFillColor(sf::Color::White);
   guess_box_6.setOutlineThickness(3);
-  guess_box_6.setOutlineColor(sf::Color(185,185,185));
+  guess_box_6.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_6.setPosition(550, 425);
   sf::RectangleShape guess_box_7(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_7.setFillColor(sf::Color::White);
   guess_box_7.setOutlineThickness(3);
-  guess_box_7.setOutlineColor(sf::Color(185,185,185));
+  guess_box_7.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_7.setPosition(150, 550);
   sf::RectangleShape guess_box_8(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_8.setFillColor(sf::Color::White);
   guess_box_8.setOutlineThickness(3);
-  guess_box_8.setOutlineColor(sf::Color(185,185,185));
+  guess_box_8.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_8.setPosition(550, 550);
   sf::RectangleShape guess_box_9(sf::Vector2f(guessbox_width, guessbox_height));
   guess_box_9.setFillColor(sf::Color::White);
   guess_box_9.setOutlineThickness(3);
-  guess_box_9.setOutlineColor(sf::Color(185,185,185));
+  guess_box_9.setOutlineColor(sf::Color(185, 185, 185));
   guess_box_9.setPosition(350, 675);
 
   //Creates the different text elements for the main screen
@@ -193,32 +193,32 @@ int main() {
   toptext.setPosition(100, 15);
   toptext.setString("Let's Play! Select A Category...");
   toptext.setCharacterSize(50);
-  toptext.setFillColor(sf::Color(0,0,128));
+  toptext.setFillColor(sf::Color(0, 0, 128));
   // Text for setting a high score page
   sf::Text congrats_text;
   congrats_text.setFont(topfont);
   congrats_text.setPosition(225, 100);
   congrats_text.setString("Congratulations!");
   congrats_text.setCharacterSize(70);
-  congrats_text.setFillColor(sf::Color(5,102,8));
+  congrats_text.setFillColor(sf::Color(5, 102, 8));
   sf::Text highscore_set_text;
   highscore_set_text.setFont(topfont);
   highscore_set_text.setPosition(150, 200);
   highscore_set_text.setString("You have set a new highscore!");
   highscore_set_text.setCharacterSize(50);
-  highscore_set_text.setFillColor(sf::Color(5,102,8));
+  highscore_set_text.setFillColor(sf::Color(5, 102, 8));
   sf::Text display_score;
   display_score.setFont(topfont);
   display_score.setPosition(350, 275);
   display_score.setCharacterSize(50);
-  display_score.setFillColor(sf::Color(150,0,0));
+  display_score.setFillColor(sf::Color(150, 0, 0));
   // Text for game over
   sf::Text endgame_text1;
   endgame_text1.setFont(topfont);
   endgame_text1.setPosition(200, 100);
   endgame_text1.setString("Thanks for playing");
   endgame_text1.setCharacterSize(70);
-  endgame_text1.setFillColor(sf::Color(5,102,8));
+  endgame_text1.setFillColor(sf::Color(5, 102, 8));
 
   // Text to play a new game
   sf::Text newgame_text;
@@ -226,7 +226,27 @@ int main() {
   newgame_text.setPosition(325, 500);
   newgame_text.setString("Play again? y/n");
   newgame_text.setCharacterSize(50);
-  newgame_text.setFillColor(sf::Color(0,0,128));
+  newgame_text.setFillColor(sf::Color(0, 0, 128));
+
+  // Text for the welcome page
+  sf::Text guesswhat_text;
+  guesswhat_text.setFont(topfont);
+  guesswhat_text.setPosition(270, 50);
+  guesswhat_text.setString("Guess What?!");
+  guesswhat_text.setCharacterSize(70);
+  guesswhat_text.setFillColor(sf::Color(0, 0, 128));
+  sf::Text enter_text;
+  enter_text.setFont(topfont);
+  enter_text.setPosition(275, 600);
+  enter_text.setString("Press 'Enter' to play!");
+  enter_text.setCharacterSize(40);
+  enter_text.setFillColor(sf::Color(0, 0, 128));
+  sf::Text instructions_text;
+  instructions_text.setFont(topfont);
+  instructions_text.setPosition(120, 150);
+  instructions_text.setString("No more flashcards - a study tool game!");
+  instructions_text.setCharacterSize(40);
+  instructions_text.setFillColor(sf::Color(0, 0, 128));
 
   //::Text for the round counter
   sf::Text round_text;
@@ -237,89 +257,89 @@ int main() {
   round_text.setFillColor(sf::Color::White);
   round_text.setOutlineThickness(0);
   round_text.setOutlineThickness(1);
-  round_text.setOutlineColor(sf::Color(0,0,128));
+  round_text.setOutlineColor(sf::Color(0, 0, 128));
   // Text for an incorrect answer
   sf::Text incorrect_text;
   incorrect_text.setFont(topfont);
   incorrect_text.setPosition(400, 350);
   incorrect_text.setString("Incorrect");
   incorrect_text.setCharacterSize(50);
-  incorrect_text.setFillColor(sf::Color(150,0,0));
+  incorrect_text.setFillColor(sf::Color(150, 0, 0));
   // Text for a correct answer
   sf::Text correct_text;
   correct_text.setFont(topfont);
   correct_text.setPosition(420, 300);
   correct_text.setString("Correct!");
   correct_text.setCharacterSize(50);
-  correct_text.setFillColor(sf::Color(5,102,8));
+  correct_text.setFillColor(sf::Color(5, 102, 8));
   // Text for points earned
   sf::Text points_text;
   points_text.setFont(topfont);
   points_text.setPosition(310, 350);
   points_text.setString("Points Earned: " + points_str);
   points_text.setCharacterSize(50);
-  points_text.setFillColor(sf::Color(5,102,8));
-  
+  points_text.setFillColor(sf::Color(5, 102, 8));
+
   // Text for each of the four categories
   sf::Text cat_one_text;
   cat_one_text.setFont(topfont);
   cat_one_text.setPosition(225, 170);
   cat_one_text.setString("A)      Animals");
   cat_one_text.setCharacterSize(50);
-  cat_one_text.setFillColor(sf::Color(0,0,128));
+  cat_one_text.setFillColor(sf::Color(0, 0, 128));
   cat_one_text.setOutlineThickness(0);
   sf::Text cat_two_text;
   cat_two_text.setFont(topfont);
   cat_two_text.setPosition(225, 320);
   cat_two_text.setString("B)     Countries");
   cat_two_text.setCharacterSize(50);
-  cat_two_text.setFillColor(sf::Color(0,0,128));
+  cat_two_text.setFillColor(sf::Color(0, 0, 128));
   cat_two_text.setOutlineThickness(0);
   sf::Text cat_three_text;
   cat_three_text.setFont(topfont);
   cat_three_text.setPosition(225, 470);
   cat_three_text.setString("C)       Food");
   cat_three_text.setCharacterSize(50);
-  cat_three_text.setFillColor(sf::Color(0,0,128));
+  cat_three_text.setFillColor(sf::Color(0, 0, 128));
   cat_three_text.setOutlineThickness(0);
   sf::Text cat_four_text;
   cat_four_text.setFont(topfont);
   cat_four_text.setPosition(225, 620);
   cat_four_text.setString("D)      Sports");
   cat_four_text.setCharacterSize(50);
-  cat_four_text.setFillColor(sf::Color(0,0,128));
-  cat_four_text.setOutlineThickness(0); 
-  
+  cat_four_text.setFillColor(sf::Color(0, 0, 128));
+  cat_four_text.setOutlineThickness(0);
+
   // creating the text for the score
   sf::Text score_text;
   score_text.setFont(topfont);
   score_text.setPosition(800, 735);
   score_text.setString("Score:");
   score_text.setCharacterSize(35);
-  score_text.setFillColor(sf::Color(5,102,8));
+  score_text.setFillColor(sf::Color(5, 102, 8));
   score_text.setOutlineThickness(0);
   sf::Text score_num;
   score_num.setFont(topfont);
   score_num.setPosition(907, 735);
   score_num.setString("0"); //Replace "num" with points (int to string) in if else
   score_num.setCharacterSize(35);
-  score_num.setFillColor(sf::Color(5,102,8));
+  score_num.setFillColor(sf::Color(5, 102, 8));
   score_num.setOutlineThickness(0);
-  
+
   //creating the text for the running high score
   sf::Text highscore_text;
   highscore_text.setFont(topfont);
   highscore_text.setPosition(50, 735);
   highscore_text.setString("Highscore:");
   highscore_text.setCharacterSize(35);
-  highscore_text.setFillColor(sf::Color(150,0,0));
+  highscore_text.setFillColor(sf::Color(150, 0, 0));
   highscore_text.setOutlineThickness(0);
   sf::Text highscore_num;
   highscore_num.setFont(topfont);
   highscore_num.setPosition(237, 735);
   highscore_num.setString("0"); //Replace "num" with points (int to string) in if else
   highscore_num.setCharacterSize(35);
-  highscore_num.setFillColor(sf::Color(150,0,0));
+  highscore_num.setFillColor(sf::Color(150, 0, 0));
   highscore_num.setOutlineThickness(0);
 
   //creating the text for each of the guesses for each category
@@ -327,39 +347,39 @@ int main() {
   sf::Text guess_text_1;
   guess_text_1.setFont(topfont);
   guess_text_1.setPosition(155, 177);
-  guess_text_1.setFillColor(sf::Color(0,0,128));
+  guess_text_1.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_2;
   guess_text_2.setFont(topfont);
   guess_text_2.setPosition(555, 177);
-  guess_text_2.setFillColor(sf::Color(0,0,128));
+  guess_text_2.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_3;
   guess_text_3.setFont(topfont);
   guess_text_3.setPosition(155, 302);
-  guess_text_3.setFillColor(sf::Color(0,0,128));
+  guess_text_3.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_4;
   guess_text_4.setFont(topfont);
   guess_text_4.setPosition(555, 302);
-  guess_text_4.setFillColor(sf::Color(0,0,128));
+  guess_text_4.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_5;
   guess_text_5.setFont(topfont);
   guess_text_5.setPosition(155, 427);
-  guess_text_5.setFillColor(sf::Color(0,0,128));
+  guess_text_5.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_6;
   guess_text_6.setFont(topfont);
   guess_text_6.setPosition(555, 427);
-  guess_text_6.setFillColor(sf::Color(0,0,128));
+  guess_text_6.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_7;
   guess_text_7.setFont(topfont);
   guess_text_7.setPosition(155, 552);
-  guess_text_7.setFillColor(sf::Color(0,0,128));
+  guess_text_7.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_8;
   guess_text_8.setFont(topfont);
   guess_text_8.setPosition(555, 552);
-  guess_text_8.setFillColor(sf::Color(0,0,128));
+  guess_text_8.setFillColor(sf::Color(0, 0, 128));
   sf::Text guess_text_9;
   guess_text_9.setFont(topfont);
   guess_text_9.setPosition(355, 677);
-  guess_text_9.setFillColor(sf::Color(0,0,128));
+  guess_text_9.setFillColor(sf::Color(0, 0, 128));
   sf::Text hint_text;
   hint_text.setFont(categoryfont);
   hint_text.setPosition(205, 75);
@@ -370,10 +390,10 @@ int main() {
 
   std::string str;
   int points = 0;
- 
+  bool first_time = true;
 
-  
-  
+
+
   // Opens the GUI and keeps it open until it is closed
   while (window.isOpen()) {
     sf::Event event;
@@ -381,15 +401,50 @@ int main() {
       if (event.type == sf::Event::Closed)
         window.close();
     }
+    if (first_time == true) {
+      window.clear();
+      window.draw(box);
+      window.draw(enter_text);
+      window.draw(instructions_text);
+      instructions_text.setCharacterSize(30);
+      instructions_text.setString("You have 4 rounds to score as many points as possible");
+      instructions_text.setPosition(100, 250);
+      window.draw(instructions_text);
+      instructions_text.setString("Use your keyboard to enter your selections.");
+      instructions_text.setPosition(175, 300);
+      window.draw(instructions_text);
+      instructions_text.setString("Press '0' for up to 2 additonal hints - but be careful,");
+      instructions_text.setPosition(90, 350);
+      window.draw(instructions_text);
+      instructions_text.setString("each hint reduces your possible score and");
+      instructions_text.setPosition(185, 400);
+      window.draw(instructions_text);
+      instructions_text.setString("incorrect guesses result in no points for that round.");
+      instructions_text.setPosition(110, 450);
+      window.draw(instructions_text);
+      instructions_text.setCharacterSize(40);
+      instructions_text.setString("Ready?");
+      instructions_text.setPosition(420, 500);
+      window.draw(instructions_text);
+      window.draw(guesswhat_text);
+      window.display();
+
+      while (first_time == true) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+          first_time = false;
+          break;
+        }
+      }
+    }
     std::vector<std::string> sol;
     std::ifstream file;
     file.open("highscore.txt");
     std::string line;
     while(std::getline(file, line)) {
-    sol.push_back(line);
+      sol.push_back(line);
     }
     file.close();
- if (round_counter == 4) {
+    if (round_counter == 4) {
 
       std::string::size_type sz;
       int rec = std::stoi(sol.at(0), &sz);
@@ -410,13 +465,13 @@ int main() {
         ofile.close();
         while (round_counter == 4) {
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
-          endgame = true;
-          break;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
-          endgame = false;
-          break;
+            endgame = true;
+            break;
+          } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+            endgame = false;
+            break;
+          }
         }
-      }
 
       } else if(points <= rec) {
         window.clear();
@@ -430,14 +485,14 @@ int main() {
 
         while (round_counter == 4) {
           if (sf::Keyboard::isKeyPressed(sf::Keyboard::N)) {
-          endgame = true;
-          break;
-        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
-          endgame = false;
-          break;
+            endgame = true;
+            break;
+          } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y)) {
+            endgame = false;
+            break;
+          }
         }
       }
-    }
       if (endgame == true) {
         break;
         window.close();
@@ -455,7 +510,7 @@ int main() {
     window.clear();
     window.draw(box);
     window.draw(toptext);
-    rc_str = std::to_string(round_counter+1);
+    rc_str = std::to_string(round_counter + 1);
     round_text.setString("Round " + rc_str);
     window.draw(round_text);
     window.draw(cat_1_box);
@@ -541,101 +596,66 @@ int main() {
           window.display();
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+            if (i < 3) {
+              if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+                  or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad0))) {
 
-              window.draw(hint_box);
+                window.draw(hint_box);
 
-              hint_text.setString("Hint: " + animals.at(v).at(i));
-              window.draw(hint_text);
-              window.display();
-              ans1 = false;
+                hint_text.setString("Hint: " + animals.at(v).at(i));
+                window.draw(hint_text);
+                window.display();
+                ans1 = false;
+              }
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))) {
               ans = 1;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))) {
               ans = 2;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))) {
               ans = 3;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))) {
               ans = 4;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))) {
               ans = 5;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6))) {
               ans = 6;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7))) {
               ans = 7;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8))) {
               ans = 8;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad9))) {
               ans = 9;
               break;
             }
 
           }
-          while(i == 3) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-              ans = 1;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-              ans = 2;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
-              ans = 3;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
-              ans = 4;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
-              ans = 5;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
-              ans = 6;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
-              ans = 7;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
-              ans = 8;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
-              ans = 9;
-              break;
-              break;
-            }
 
-          }
           temp = temp - 5;
           if (ans == v + 1) {
             std::string str = std::to_string(points);
@@ -668,27 +688,10 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        break;//break;
+        break;
       }
 
     }
-    // if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
-    //   while (window.isOpen()) {
-    //     sf::Event event;
-    //     while (window.pollEvent(event)) {
-    //       if (event.type == sf::Event::Closed)
-    //         window.close();
-    //     }
-    //     window.clear();
-    //     window.draw(box);
-    //     window.draw(cat_2_box);
-    //     window.draw(cat_two_text);
-    //     window.display();
-    //     int temp{country()};
-    //     points = points + temp;
-    //     std::cout << "You got " << temp << " points this round. You are currently on " << points << " points\n";
-    //     break;
-    //   }
 
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::B)) {
@@ -753,97 +756,62 @@ int main() {
           window.display();
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+            if (i < 3) {
+              if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+                  or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad0))) {
 
-              window.draw(hint_box);
+                window.draw(hint_box);
 
-              hint_text.setString("Hint: " + countries.at(v).at(i));
-              window.draw(hint_text);
-              window.display();
-              ans1 = false;
+                hint_text.setString("Hint: " + countries.at(v).at(i));
+                window.draw(hint_text);
+                window.display();
+                ans1 = false;
+              }
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))) {
               ans = 1;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))) {
               ans = 2;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))) {
               ans = 3;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))) {
               ans = 4;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))) {
               ans = 5;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6))) {
               ans = 6;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7))) {
               ans = 7;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8))) {
               ans = 8;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad9))) {
               ans = 9;
-              break;
-            }
-
-          }
-          while(i == 3) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-              ans = 1;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-              ans = 2;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
-              ans = 3;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
-              ans = 4;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
-              ans = 5;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
-              ans = 6;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
-              ans = 7;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
-              ans = 8;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
-              ans = 9;
-              break;
               break;
             }
 
@@ -880,7 +848,7 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        break;//break;
+        break;
       }
 
     }
@@ -948,101 +916,66 @@ int main() {
           window.display();
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+            if (i < 3) {
+              if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+                  or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad0))) {
 
-              window.draw(hint_box);
+                window.draw(hint_box);
 
-              hint_text.setString("Hint: " + foods.at(v).at(i));
-              window.draw(hint_text);
-              window.display();
-              ans1 = false;
+                hint_text.setString("Hint: " + foods.at(v).at(i));
+                window.draw(hint_text);
+                window.display();
+                ans1 = false;
+              }
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))) {
               ans = 1;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))) {
               ans = 2;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))) {
               ans = 3;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))) {
               ans = 4;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))) {
               ans = 5;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6))) {
               ans = 6;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7))) {
               ans = 7;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8))) {
               ans = 8;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad9))) {
               ans = 9;
               break;
             }
 
           }
-          while(i == 3) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-              ans = 1;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-              ans = 2;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
-              ans = 3;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
-              ans = 4;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
-              ans = 5;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
-              ans = 6;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
-              ans = 7;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
-              ans = 8;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
-              ans = 9;
-              break;
-              break;
-            }
 
-          }
           temp = temp - 5;
           if (ans == v + 1) {
             std::string str = std::to_string(points);
@@ -1075,7 +1008,7 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        break;//break;
+        break;
       }
 
     }
@@ -1142,101 +1075,66 @@ int main() {
           window.display();
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+            if (i < 3) {
+              if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+                  or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad0))) {
 
-              window.draw(hint_box);
+                window.draw(hint_box);
 
-              hint_text.setString("Hint: " + sports.at(v).at(i));
-              window.draw(hint_text);
-              window.display();
-              ans1 = false;
+                hint_text.setString("Hint: " + sports.at(v).at(i));
+                window.draw(hint_text);
+                window.display();
+                ans1 = false;
+              }
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))) {
               ans = 1;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))) {
               ans = 2;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))) {
               ans = 3;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))) {
               ans = 4;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))) {
               ans = 5;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6))) {
               ans = 6;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7))) {
               ans = 7;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8))) {
               ans = 8;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad9))) {
               ans = 9;
               break;
             }
 
           }
-          while(i == 3) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-              ans = 1;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-              ans = 2;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
-              ans = 3;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
-              ans = 4;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
-              ans = 5;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
-              ans = 6;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
-              ans = 7;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
-              ans = 8;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
-              ans = 9;
-              break;
-              break;
-            }
 
-          }
           temp = temp - 5;
           if (ans == v + 1) {
             std::string str = std::to_string(points);
@@ -1269,12 +1167,12 @@ int main() {
         round_counter++;
         window.draw(score_num);
         window.display();
-        break;//break;
+        break;
       }
 
     }
 
-if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 
       while (window.isOpen()) {
         sf::Event event;
@@ -1336,101 +1234,66 @@ if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
           window.display();
           while (ans1 == true) {
             std::this_thread::sleep_for(std::chrono::nanoseconds(50000000));
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num0)) {
+            if (i < 3) {
+              if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num0))
+                  or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad0))) {
 
-              window.draw(hint_box);
+                window.draw(hint_box);
 
-              hint_text.setString("Hint: " + languages.at(v).at(i));
-              window.draw(hint_text);
-              window.display();
-              ans1 = false;
+                hint_text.setString("Hint: " + languages.at(v).at(i));
+                window.draw(hint_text);
+                window.display();
+                ans1 = false;
+              }
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1))) {
               ans = 1;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2))) {
               ans = 2;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num3))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad3))) {
               ans = 3;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num4))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad4))) {
               ans = 4;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num5))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad5))) {
               ans = 5;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num6))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad6))) {
               ans = 6;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num7))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7))) {
               ans = 7;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num8))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8))) {
               ans = 8;
               break;
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
+            if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+                or (sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad9))) {
               ans = 9;
               break;
             }
 
           }
-          while(i == 3) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
-              ans = 1;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
-              ans = 2;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)) {
-              ans = 3;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)) {
-              ans = 4;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num5)) {
-              ans = 5;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num6)) {
-              ans = 6;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num7)) {
-              ans = 7;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num8)) {
-              ans = 8;
-              break;
-              break;
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9)) {
-              ans = 9;
-              break;
-              break;
-            }
 
-          }
           temp = temp - 5;
           if (ans == v + 1) {
             std::string str = std::to_string(points);
@@ -1463,9 +1326,9 @@ if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
         round_counter++;
         window.draw(score_num);
         window.display();
-        break;//break;
+        break;
       }
 
     }
-}
+  }
 }
