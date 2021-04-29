@@ -1219,7 +1219,7 @@ int main() {
         srand(time(0));
         int v = rand() % 9;
         int ans = 0;
-        int temp = 40;
+        int temp = 60;
 
         for(int i = 1; i < 4; i++) {
           bool ans1 = true;
