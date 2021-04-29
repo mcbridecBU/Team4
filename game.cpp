@@ -1294,7 +1294,7 @@ int main() {
 
           }
 
-          temp = temp - 5;
+          temp = temp - 15;
           if (ans == v + 1) {
             std::string str = std::to_string(points);
             score_num.setString(str);
