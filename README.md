@@ -2,15 +2,15 @@
 
 "Guess What?!" is a guessing game for developing problem solving skills though the process of elimination. The program could also be used as a study tool by editing the categories in the game.cpp file. 
 
-The files that must be downloaded to runt he program are:
+The files that must be downloaded to run the program are:
 1) "game.cpp"
 2) "Makefile"
 3) "highscore.txt"
 
-To compile the game itself, the attatched makefile is required. It makes sure to include all the necessary sfml modules (graphics, system, and window).
+To compile the game itself, the included makefile is required. It makes sure to include all the necessary sfml modules (graphics, system, and window).
 1) Ensure that makefile is in the same directory as the game.cpp file.
 2) Navigate to the directory using a terminal window.
-3) Type "make game" to compile the program. This will make an executable titled "GuessWhat".
+3) Type "make game" to compile the program. This will compile an executable titled "GuessWhat".
 
 To launch the executable:
 1) Ensure that the executable "GuessWhat" and txt file "highscore.txt" are in your current directory.
@@ -19,13 +19,13 @@ To launch the executable:
 
 To reset the highscore:
 1) Open the "highscore.txt" file.
-2) Using a text editing program change the number to 0.
+2) Using a text editor change the number to 0.
 3) Anything entered other than a number may lead to failure of the program.
 
 
 Gameplay
 When the game launches, an instructions page will appear. Press enter to start the game.
-Once the player presses enter, four categories will be displayed, each labeled "A Animals", "B Countries", "C Food", and "D Sports".
+Once the player presses enter, four categories will be displayed, labeled "A Animals", "B Countries", "C Food", and "D Sports".
 To select a category, press the corresponding key on your keyboard.
 
 After a category is selected, a new window will open up displaying a hint with nine options, each numbered 1-9.
@@ -39,4 +39,5 @@ When the guess is made a screen will pop up informing the player if their guess 
 
 There are 4 rounds in the game, and any category can be selected for each round.
 After 4 rounds, your score will be displayed, minimum being 0 and maximum being 60.
-If the high score is beat, the current score will become the new score and will be saved into the text file. There are two possible end screens, one for if the high score is beat and one for if not. Both give an option to play again. 
+If the current high score is surpassed, the current score will become the new high score and will be saved into the text file.
+There are two possible end screens, one for if a new high score is set and one for if not. Both give an option to play again. 
